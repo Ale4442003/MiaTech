@@ -97,3 +97,15 @@ li:last-child {
 #colorname {
     color:red
 }
+
+p {
+    color:orange
+}
+
+.Specificity {
+    color:rgb(25, 97, 7)
+}
+
+#CSS {
+    color:rgb(240, 78, 232)
+}
