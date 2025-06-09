@@ -89,3 +89,7 @@ li:last-child {
 #hex {
     color:#ff0000
 }
+
+#rgba {
+    color: rgba(255, 0, 0, 0.7);
+}
