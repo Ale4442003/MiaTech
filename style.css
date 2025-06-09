@@ -76,3 +76,7 @@ h3, h5, p {
 a:hover {
     color:rgb(223, 99, 62)
 }
+
+li:last-child {
+      font-weight:bold;
+}
