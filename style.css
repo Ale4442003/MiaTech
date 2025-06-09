@@ -68,3 +68,7 @@ h6 {
 * {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+h3, h5, p {
+    text-align: center;
+}
