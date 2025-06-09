@@ -2,3 +2,27 @@ p {
     color:purple;
     text-align:right;
 }
+
+h1 {
+    color:slateblue;
+}
+
+h2 {
+    color:rgb(54, 3, 78);
+}
+
+h3 {
+    color:rgb(143, 216, 242);
+}
+
+h4 {
+    color:rgb(87, 209, 130);
+}
+
+h5 {
+    color:rgb(203, 249, 20);
+}
+
+h6 {
+    color:rgb(213, 57, 46);
+}
