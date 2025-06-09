@@ -46,7 +46,6 @@ h6 {
     color:black;
     text-align: justify;
     border-style: dashed;
-    font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -64,4 +63,8 @@ h6 {
 
 .italic {
     font-style: italic;
+}
+
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
