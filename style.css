@@ -93,3 +93,7 @@ li:last-child {
 #rgba {
     color: rgba(255, 0, 0, 0.7);
 }
+
+#colorname {
+    color:red
+}
