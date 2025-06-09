@@ -80,3 +80,8 @@ a:hover {
 li:last-child {
       font-weight:bold;
 }
+
+
+#red {
+    color:rgb(255, 0, 0, 0.5); /* Red */
+}
