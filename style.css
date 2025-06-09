@@ -29,3 +29,9 @@ h6 {
 #title {
     background-color: fuchsia;
 }
+
+.example {
+    color: black;
+    text-align: left;
+    font-size: 30px;
+}
