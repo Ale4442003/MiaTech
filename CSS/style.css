@@ -146,3 +146,9 @@ div{
     font-size: 7em;
     color: green;
 }
+:root{
+    --color-text:red;
+}
+*{
+    color:var(--color-text)
+}
