@@ -69,3 +69,9 @@ p.clear{
     border:1px solid #eee;
     background-color:#f9f9f9
 }
+.nav{
+    position:sticky;
+    top:0;
+    padding:5px;
+    border:2px solid #4CAF50;
+}
