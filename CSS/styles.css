@@ -59,3 +59,13 @@ img{
 p.clear{
     clear:both
 }
+.container{
+    display:flex;
+    gap:15px;
+}
+.container p{
+    flex:1;
+    padding:10px;
+    border:1px solid #eee;
+    background-color:#f9f9f9
+}
