@@ -49,4 +49,7 @@ body{
     background-color:#f1f1f1;
     padding:10 px;
     text-align: center;
-}   
+} 
+.hidden-paragraph{
+    display: none;
+}
