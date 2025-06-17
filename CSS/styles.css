@@ -1,77 +1,96 @@
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
-body{
-    margin:0;
+
+body {
+    margin: 0;
 }
-.header{
-    background-color:#f1f1f1;
-    padding :20 px;
-    text-align:center;
-}
-.nav{
-    overflow:hidden;
-    background-color:#333;
-}
-.nav a{
-    float:left;
-    display: block;
-    color:#f2f2f2;
+
+.header {
+    background-color: #f1f1f1;
+    padding: 20 px;
     text-align: center;
-    padding:14 px 16 px;
+}
+
+.nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14 px 16 px;
     text-decoration: none;
 }
-.nav a:hover{
-    background-color:#ddd;
-    color:black;
+
+.nav a:hover {
+    background-color: #ddd;
+    color: black;
 }
-.column{
-    float:left;
-    padding:10 px;
+
+.column {
+    float: left;
+    padding: 10 px;
 }
-.column.side{
-    width:25%;
+
+.column.side {
+    width: 25%;
 }
-.column.middle{
-    width:50%
+
+.column.middle {
+    width: 50%
 }
-.row::after{
-    content:"";
-    display:table;
-    clear:both;
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
 }
-@media screen and (max-width:60opx){
-    .column.side, .column.middle {
-        width:100%
+
+@media screen and (max-width:60opx) {
+
+    .column.side,
+    .column.middle {
+        width: 100%
     }
 }
-.footer{
-    background-color:#f1f1f1;
-    padding:10 px;
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10 px;
     text-align: center;
-} 
-.hidden-paragraph{
+}
+
+.hidden-paragraph {
     display: none;
 }
-img{
-    float:right;
+
+img {
+    float: right;
 }
-p.clear{
-    clear:both
+
+p.clear {
+    clear: both
 }
-.container{
-    display:flex;
-    gap:15px;
+
+.container {
+    display: flex;
+    gap: 15px;
 }
-.container p{
-    flex:1;
-    padding:10px;
-    border:1px solid #eee;
-    background-color:#f9f9f9
+
+.container p {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9
 }
-.nav{
-    position:fixed;
-    top:0;
-    padding:5px;
-    border:2px solid #4CAF50;
+
+.nav {
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    border: 2px solid #4CAF50;
 }
