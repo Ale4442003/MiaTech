@@ -118,3 +118,11 @@ div{
     color:rgb(76, 76, 240);
     text-align: center;
 }
+.container{
+    width:80%;
+    border:1px solid black;
+}
+.square-percentage{
+    width: 100%;
+    padding-bottom: 100%;
+}
