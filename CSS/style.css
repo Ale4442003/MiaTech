@@ -148,7 +148,11 @@ div{
 }
 :root{
     --color-text:red;
+    --padding:30px
 }
 *{
     color:var(--color-text)
+}
+.padding{
+    padding:var(--padding)
 }
