@@ -56,3 +56,6 @@ body{
 img{
     float:right;
 }
+p.clear{
+    clear:both
+}
