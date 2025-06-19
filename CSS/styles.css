@@ -96,9 +96,9 @@ p.clear {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(2, 71, 48, 0.2);
+  transition: 0.5s;
+  width: 20%;
 }
 
 .card:hover {
@@ -106,5 +106,5 @@ p.clear {
 }
 
 .container {
-  padding: 2px 16px;
+  padding: 4px 20px;
 }
