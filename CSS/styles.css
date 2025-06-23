@@ -138,3 +138,15 @@ p.clear {
     height: 100px;
     background-color:purple;
 }
+
+.container-flexbox {
+    display:flex;
+    background:rgb(157, 248, 217);
+}
+
+.container-flexbox >  div {
+    background-color: rgb(252, 174, 252);
+    margin: 15px;
+    padding: 30px;
+    font-size: 20px;
+}
