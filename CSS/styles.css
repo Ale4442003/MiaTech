@@ -144,6 +144,8 @@ p.clear {
     background:rgb(157, 248, 217);
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    height: 300px;
 }
 
 .container-flexbox >  div {
