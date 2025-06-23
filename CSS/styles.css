@@ -141,11 +141,13 @@ p.clear {
 
 .container-flexbox {
     display:flex;
+    height: 300px;
     background:rgb(157, 248, 217);
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    height: 300px;
+    justify-content: center;
+
 }
 
 .container-flexbox >  div {
