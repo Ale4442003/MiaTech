@@ -142,7 +142,8 @@ p.clear {
 .container-flexbox {
     display:flex;
     background:rgb(157, 248, 217);
-    flex-direction: column;
+    flex-direction: column-reverse;
+    
 }
 
 .container-flexbox >  div {
