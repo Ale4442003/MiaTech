@@ -217,3 +217,43 @@ p.clear {
     font-weight: bold;
     grid-column-start: 1;
     grid-r*/
+
+.calculator-container {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: 50px repeat(4, 50px); 
+    gap: 10px; 
+    padding: 15px;
+    background-color: #130404e9;  
+    width: 250px; 
+}
+
+.display {
+    grid-column: 1 / span 4;
+    background-color: #555;
+    color: white;
+    font-size: 2.1em;
+    padding: 7px;
+    text-align: right;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: flex-end; 
+}
+
+.button {
+    background-color: #666; 
+    color: rgb(229, 213, 213);
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operator {
+    background-color: #ff9900;
+}
+
+.equals {
+    grid-column: span 1; 
+    background-color: #3780cd; 
+}
