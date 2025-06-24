@@ -144,19 +144,29 @@ p.clear {
     height: 300px;
     background:rgb(157, 248, 217);
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    width: 500px;
+    margin: 20px;
+    border: 2px;
+
 
 }
 
 .container-flexbox >  div {
     background-color: rgb(252, 174, 252);
-    margin: 15px;
-    padding: 30px;
-    font-size: 20px;
+    color:#333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    margin: 5px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.Flexbox-3 {
-    flex-grow: 5;
+.Flexbox-1 {
+    flex-shrink: 2;
 }
+
+
