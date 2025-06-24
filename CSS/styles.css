@@ -181,13 +181,11 @@ p.clear {
 
 .container-grid {
     display: grid;
-    grid-template-columns: repeat (3, 100px);
-    grid-template-rows: repeat (3, 100px);
+    grid-template: repeat(2, 100px)/repeat(5, 1fr);
     background-color: rgb(77, 145, 227);
     gap: 10px;
     padding: 20px;
-    width : 320px;
-    margin: 20px;
+    margin: 20px auto;
     border: 2px;
 }
 
@@ -202,10 +200,17 @@ p.clear {
     align-items: center;
 }
 
-.cella-unita {
+/*.cella-unita {
     background-color: red;
     color: white;
     font-weight: bold;
     grid-row-start: 3;
     grid-column: 2/ span 2;
 }
+
+.cella-unita-1-4 {
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-r*/
