@@ -179,5 +179,20 @@ p.clear {
     align-self: flex-start;
 }
 
+.container-grid {
+    display: flex;
+    grid-template-columns: auto auto auto;
+   background-color: rgb(77, 145, 227);
+    padding: 10px;
+
+}
+
+.container-grid > div {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
 
 
