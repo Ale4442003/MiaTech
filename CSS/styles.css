@@ -180,11 +180,15 @@ p.clear {
 }
 
 .container-grid {
-    display: flex;
-    grid-template-columns: auto auto auto;
-   background-color: rgb(77, 145, 227);
+    display: grid;
+    grid-template-columns: repeat (3, 100px);
+    grid-template-rows: repeat (3, 100px);
+    background-color: rgb(77, 145, 227);
     padding: 10px;
     gap: 10px;
+    width : 320px;
+    margin: 20px;
+    border: 2px;
 
 }
 
@@ -194,6 +198,15 @@ p.clear {
     padding: 10px;
     font-size: 30px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
+.cella-unita {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    grid-row-start: 3;
+    grid-column: 2/4;
+}
