@@ -156,3 +156,7 @@ p.clear {
     padding: 30px;
     font-size: 20px;
 }
+
+.Flexbox-3 {
+    flex-grow: 5;
+}
