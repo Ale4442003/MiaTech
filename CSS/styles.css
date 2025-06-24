@@ -168,10 +168,16 @@ p.clear {
 
 .Flexbox-1 {
     flex-shrink: 2;
+    align-self: flex-end;
 }
 
 .Flexbox-2 {
     flex-basis: 0 2 200px;
 }
+
+.Flexbox-3 {
+    align-self: flex-start;
+}
+
 
 
