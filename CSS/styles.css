@@ -181,7 +181,7 @@ p.clear {
 
 .container-grid {
     display: grid;
-    grid-template: repeat(2, 100px)/repeat(5, 1fr);
+    grid-template: 100px 200px/repeat(5, 1fr);
     background-color: rgb(77, 145, 227);
     gap: 10px;
     padding: 20px;
