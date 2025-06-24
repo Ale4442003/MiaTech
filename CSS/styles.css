@@ -257,3 +257,11 @@ p.clear {
     grid-column: span 1; 
     background-color: #3780cd; 
 }
+body {
+    background-color: yellow;
+}
+@media only screen and (max-width:768px){
+    body {
+    background-color: blue;
+}
+}
