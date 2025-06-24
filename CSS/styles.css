@@ -163,10 +163,15 @@ p.clear {
     margin: 5px;
     padding: 10px;
     box-sizing: border-box;
+    flex-basis: 200px;
 }
 
 .Flexbox-1 {
     flex-shrink: 2;
+}
+
+.Flexbox-2 {
+    flex-basis: 0 2 200px;
 }
 
 
