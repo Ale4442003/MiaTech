@@ -184,12 +184,11 @@ p.clear {
     grid-template-columns: repeat (3, 100px);
     grid-template-rows: repeat (3, 100px);
     background-color: rgb(77, 145, 227);
-    padding: 10px;
     gap: 10px;
+    padding: 20px;
     width : 320px;
     margin: 20px;
     border: 2px;
-
 }
 
 .container-grid > div {
@@ -208,5 +207,5 @@ p.clear {
     color: white;
     font-weight: bold;
     grid-row-start: 3;
-    grid-column: 2/4;
+    grid-column: 2/ span 2;
 }
