@@ -76,12 +76,12 @@ p.clear {
     clear: both
 }
 
-.container {
+.container-p {
     display: flex;
     gap: 15px;
 }
 
-.container p {
+.container-p p {
     flex: 1;
     padding: 10px;
     border: 1px solid #eee;
@@ -221,18 +221,19 @@ p.clear {
 .calculator-container {
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: 50px repeat(4, 50px); 
+    grid-template-rows:  repeat(6, 50px); 
     gap: 10px; 
-    padding: 15px;
+    padding: 20px;
     background-color: #130404e9;  
     width: 250px; 
+    margin: 40px;
 }
 
 .display {
-    grid-column: 1 / span 4;
+    grid-column: span 4;
     background-color: #555;
     color: white;
-    font-size: 2.1em;
+    font-size: 2.5em;
     padding: 7px;
     text-align: right;
     display: flex;
@@ -257,6 +258,28 @@ p.clear {
     grid-column: span 1; 
     background-color: #3780cd; 
 }
+
+@media screen and (max-width: 450px) { 
+
+  .calculator-container {
+    width: 95%;
+    max-width: 300px; 
+    margin: 10px auto; 
+    padding: 10px; 
+    gap: 5px; 
+  }
+
+  .display {
+    font-size: 2em;
+    padding: 10px; 
+  }
+
+  .button {
+    font-size: 1.5em; 
+  }
+}
+
+
 body {
     background-color: yellow;
 }
@@ -264,4 +287,13 @@ body {
     body {
     background-color: blue;
 }
+}
+
+.container{
+    height: 100vh;
+    background-color: rgb(104, 3, 62);
+    color: white;
+    font-size:30px;
+    justify-content: center;
+    padding: 100px;
 }
