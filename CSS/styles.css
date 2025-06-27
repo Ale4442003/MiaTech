@@ -188,8 +188,8 @@ p.clear {
     padding: 20px;
     margin: 20px auto;
     border: 2px;
-    justify-items: center;
-    align-items: center;
+    /*justify-items: center;
+    align-items: center;*/
 }
 
 .container-grid > div {
@@ -199,24 +199,19 @@ p.clear {
     font-size: 30px;
     text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;
+    align-items: center;*/
 }
 
-/*.cella-unita {
+.cella-unita {
     background-color: red;
-    color: white;
-    font-weight: bold;
-    grid-row-start: 3;
-    grid-column: 2/ span 2;
+    color: black;
+   /* grid-row: span 3;*/
 }
 
 .cella-unita-1-4 {
-    background-color: blue;
-    color:white;
-    font-weight: bold;
-    grid-column-start: 1;
-    grid-r*/
+    grid-column: span 4;
+}
 
 .calculator-container {
     display: grid; 
