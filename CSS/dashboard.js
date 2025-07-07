@@ -15,3 +15,12 @@ let number2 = 20;
     console.log(number2);
 }
 console.log(number2);
+
+let outside = 21;
+{
+    let inside = 9;
+    console.log(inside);
+    console.log(outside);
+}
+console.log(inside);
+console.log(outside);
