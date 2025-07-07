@@ -8,3 +8,10 @@ let number = 5;
 console.log(number);
 number = 22;
 console.log(number);
+
+let number2 = 20;
+{
+    let number2 = 25;
+    console.log(number2);
+}
+console.log(number2);
