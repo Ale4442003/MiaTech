@@ -4,3 +4,7 @@ console.log(fistName);
 const cap = 24100;
 console.log(cap);
 
+let number = 5;
+console.log(number);
+number = 22;
+console.log(number);
