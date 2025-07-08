@@ -35,3 +35,5 @@ while (decrescente >= 1) {
     console.log (decrescente);
     decrescente -= 2;
 }
+
+let word = prompt("holii");
