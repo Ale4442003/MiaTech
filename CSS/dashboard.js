@@ -22,5 +22,10 @@ let outside = 21;
     console.log(inside);
     console.log(outside);
 }
-console.log(inside);
+//console.log(inside);
 console.log(outside);
+
+
+for (let numero = 0; numero <= 20; numero += 2) {
+    console.log(numero);
+}
