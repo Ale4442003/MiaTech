@@ -62,3 +62,26 @@ if (score >= 90 && score <= 100) {
 } else if (score <= 59) {
   console.log("voto insufficiente");
 }
+
+
+let score1 = parseInt(prompt("Inserisci il tuo punteggio (0-100)"));
+let voto;
+
+switch (true) {
+  case (score1 >= 90 && score1 <= 100):
+    voto = "voto ottimo";
+    break;
+  case (score1 >= 70 && score1 <= 89):
+    voto = "voto buono";
+    break;
+  case (score1 >= 60 && score1 <= 69):
+    voto = "voto sufficiente";
+    break;
+  case (score1 <= 59):
+    voto = "voto insufficiente";
+    break;
+  default:
+    voto = "Punteggio non valido";
+}
+
+console.log(voto);
