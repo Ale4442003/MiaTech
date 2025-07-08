@@ -29,3 +29,9 @@ console.log(outside);
 for (let numero = 0; numero <= 20; numero += 2) {
     console.log(numero);
 }
+
+let  decrescente = 9;
+while (decrescente >= 1) {
+    console.log (decrescente);
+    decrescente -= 2;
+}
