@@ -98,4 +98,7 @@ for (let i = 0; i < votazioni.length; i++) {
 
 console.log("La somma è:", somma);
 
+for (let reverse = votazioni.length - 1; reverse >= 0; reverse--) {
+  console.log(votazioni[reverse]);
+}
 
