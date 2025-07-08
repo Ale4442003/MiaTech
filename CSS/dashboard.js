@@ -37,3 +37,4 @@ while (decrescente >= 1) {
 }
 
 let word = prompt("holii");
+console.log(word.length);
