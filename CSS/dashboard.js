@@ -44,3 +44,10 @@ do {
     input = prompt ("Inserisci una parola almeno di 5 lettere");
 } while (input.length<5);
 console.log("Hai inserito", input);
+
+let numero = 10;
+if (numero > 5) {
+    console.log("La variabile è maggiore di 5");
+} else {
+    console.log("La variabile è minore di 5");
+}
