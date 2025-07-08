@@ -38,3 +38,9 @@ while (decrescente >= 1) {
 
 let word = prompt("holii");
 console.log(word.length);
+
+let input;
+do {
+    input = prompt ("Inserisci una parola almeno di 5 lettere");
+} while (input.length<5);
+console.log("Hai inserito", input);
