@@ -89,3 +89,13 @@ console.log(voto);
 
 let votazioni = ["0", "1", "2", "3","4", "5"];
 console.log(votazioni);
+
+let somma = 0;
+
+for (let i = 0; i < votazioni.length; i++) {
+  somma += parseInt(votazioni[i]); // converti la stringa in numero e somma
+}
+
+console.log("La somma è:", somma);
+
+
