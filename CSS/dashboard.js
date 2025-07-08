@@ -93,7 +93,7 @@ console.log(votazioni);
 let somma = 0;
 
 for (let i = 0; i < votazioni.length; i++) {
-  somma += parseInt(votazioni[i]); // converti la stringa in numero e somma
+  somma += parseInt(votazioni[i]); 
 }
 
 console.log("La somma è:", somma);
