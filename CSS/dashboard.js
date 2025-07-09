@@ -125,3 +125,7 @@ console.log(person.age);
 person.age = 22;
 
 console.log(person.age);
+
+person.job = "secretary";
+
+console.log(person.job);
