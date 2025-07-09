@@ -102,3 +102,13 @@ for (let reverse = votazioni.length - 1; reverse >= 0; reverse--) {
   console.log(votazioni[reverse]);
 }
 
+let parole =[];
+for (let i = 0; i < 5; i++) {
+  let parola = prompt("Inserisci massimo 5 parole");
+  parole.push(parola);
+}
+for (let i = 0; i < parole.length; i++) {
+  if (parole[i].length % 2 !==0) {
+    console.log(parole[i]);
+  }
+}
