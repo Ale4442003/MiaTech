@@ -198,3 +198,15 @@ let squaredNumbers = numbers.map(function(number) {
 })
 
 console.log(squaredNumbers);
+
+let students =  [
+  { name: "Clara", grade: 55 },
+  { name: "Ale", grade: 65 },
+  { name: "Marco", grade: 30 }
+];
+
+let passedStudents = students.filter(student => student.grade >= 60);
+let failedStudent = students.find(student => student.grade < 60);
+
+console.log(passedStudents);
+console.log(failedStudent);
