@@ -171,3 +171,12 @@ console.log(counter.increment());
 console.log(counter.increment()); 
 console.log(counter.decrement()); 
 
+
+let student = {
+  name: "Alessandra",
+  age: "21",
+  grade: "A",
+  school: "Harvard"
+}
+
+console.log(Object.keys(student));
