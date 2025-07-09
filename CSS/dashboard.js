@@ -133,3 +133,18 @@ console.log(person.job);
 for (let chiave in person) {
   console.log (chiave + ":" + person [chiave]);
   }
+
+  let x=4;
+  let y=2;
+
+function outerFunction(x) {
+  function innerFunction(y){
+    return x+y;
+  }
+  return innerFunction;
+}
+let sum = outerFunction(x);
+sum(y);
+
+console.log(outerFunction(4)(2));
+
