@@ -181,3 +181,8 @@ let student = {
 
 console.log(Object.keys(student));
 console.log(Object.values(student));
+console.log(Object.entries(student));
+
+Object.entries(student).forEach(([chiave, valore])=>{
+  console.log(`${chiave}: ${valore}`);
+});
