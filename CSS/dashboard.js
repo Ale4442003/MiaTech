@@ -134,17 +134,19 @@ for (let chiave in person) {
   console.log (chiave + ":" + person [chiave]);
   }
 
-  let x=4;
-  let y=2;
 
-function outerFunction(x) {
+
+function outerFunction(x, initialValue) {
+  let result= initialValue;
+
   function innerFunction(y){
-    return x+y;
+    result = result + y;
+    return result;
   }
   return innerFunction;
 }
-let sum = outerFunction(x);
-sum(y);
+let sum = outerFunction(4, 4); 
+console.log(sum(2));
+console.log(sum(2));
 
-console.log(outerFunction(4)(2));
 
