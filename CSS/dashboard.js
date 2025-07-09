@@ -210,3 +210,16 @@ let failedStudent = students.find(student => student.grade < 60);
 
 console.log(passedStudents);
 console.log(failedStudent);
+
+
+let expenses =[25, 21, 13, 7, 33];
+let total = expenses.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+console.log("Totale spese:", total); 
+
+let words = ["banana", "apple", "cherry", "date"];
+words.sort(); 
+
+console.log(expenses, words);
