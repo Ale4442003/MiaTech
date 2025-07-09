@@ -129,3 +129,7 @@ console.log(person.age);
 person.job = "secretary";
 
 console.log(person.job);
+
+for (let chiave in person) {
+  console.log (chiave + ":" + person [chiave]);
+  }
