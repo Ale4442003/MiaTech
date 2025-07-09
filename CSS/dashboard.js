@@ -112,3 +112,11 @@ for (let i = 0; i < parole.length; i++) {
     console.log(parole[i]);
   }
 }
+
+let person = {
+  name: "Alessandra",
+  age: 21,
+  city: "Bergamo"
+}
+
+console.log(person);
