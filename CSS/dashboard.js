@@ -223,3 +223,18 @@ let words = ["banana", "apple", "cherry", "date"];
 words.sort(); 
 
 console.log(expenses, words);
+
+class Automobile {
+  constructor (marca, modello, anno) {
+    this.marca = marca;
+    this.modello = modello;
+    this.anno = anno;
+  }
+
+  descrizione() {
+    return `Questa macchina è una ${this.marca} ${this.modello} del ${this.anno}.`;
+  }
+}
+
+let Kia = new Automobile("Kia", "Picanto", "2024");
+console.log(Kia.descrizione());
