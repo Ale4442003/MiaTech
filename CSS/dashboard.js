@@ -229,12 +229,46 @@ class Automobile {
     this.marca = marca;
     this.modello = modello;
     this.anno = anno;
+    this.chilometraggio = 0;
   }
 
   descrizione() {
     return `Questa macchina è una ${this.marca} ${this.modello} del ${this.anno}.`;
   }
+
+  aggiungiChilometri(km) {
+    this.chilometraggio += km;
+  }
+
+  mostraChilometraggio() {
+    return `${this.chilometraggio} km`;
+  }
 }
+
+class Elettrica extends Automobile {
+  constructor(marca, modello, anno, autonomia) {
+    super(marca, modello, anno);
+    this.autonomia = autonomia;
+  }
+
+  descrizione() {
+    return `Questa macchina è una ${this.marca} ${this.modello} del ${this.anno}, con ${this.chilometraggio} km percorsi e un'autonomia di ${this.autonomia} km.`;
+  }
+
+  ricarica(km) {
+    this.autonomia += km;
+  }
+}
+
+let Mercedes = new Elettrica("Mercedes", "SUV", 2024, 400);
 
 let Kia = new Automobile("Kia", "Picanto", "2024");
 console.log(Kia.descrizione());
+Kia.aggiungiChilometri(40);
+console.log(Kia.mostraChilometraggio());
+
+console.log(Mercedes.descrizione());
+Mercedes.aggiungiChilometri(80);
+Mercedes.ricarica(20);
+console.log(Mercedes.mostraChilometraggio());
+console.log(Mercedes.descrizione());
