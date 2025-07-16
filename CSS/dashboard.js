@@ -260,9 +260,14 @@ class Elettrica extends Automobile {
   }
 }
 
+Automobile.prototype.saluta = function () {
+  return `Sono una ${this.marca} ${this.modello}.`;
+}
+
 let Mercedes = new Elettrica("Mercedes", "SUV", 2024, 400);
 
 let Kia = new Automobile("Kia", "Picanto", "2024");
+
 console.log(Kia.descrizione());
 Kia.aggiungiChilometri(40);
 console.log(Kia.mostraChilometraggio());
@@ -272,3 +277,6 @@ Mercedes.aggiungiChilometri(80);
 Mercedes.ricarica(20);
 console.log(Mercedes.mostraChilometraggio());
 console.log(Mercedes.descrizione());
+
+console.log(Kia.saluta());
+console.log(Mercedes.saluta());
