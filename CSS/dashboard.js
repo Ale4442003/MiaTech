@@ -231,6 +231,11 @@ class Automobile {
   }
 
   #contatoreChiamate = 0;
+  #contatoreChilometri = 0;
+
+  #incrementaContatore() {
+    this.#contatoreChiamate++;
+  }
 
   static confrontaChilometraggio(auto1, auto2) {
     if (auto1.chilometraggio > auto2.chilometraggio) {
@@ -250,7 +255,7 @@ class Automobile {
   }
 
   descrizione() {
-    this.#contatoreChiamate++;
+    this.#incrementaContatore();
     return `Questa macchina è una ${this.marca} ${this.modello} del ${this.anno}.`;
   }
 
@@ -260,6 +265,7 @@ class Automobile {
 
   aggiungiChilometri(km) {
     this.chilometraggio += km;
+    this.#contatoreChilometri++;
   }
 
   mostraChilometraggio() {
@@ -276,6 +282,10 @@ class Automobile {
     } else {
       return "";
     }
+  }
+
+  mostraContatoreChiamate() {
+    return this.#contatoreChilometri;
   }
 }
 
@@ -328,3 +338,7 @@ console.log(Mercedes.saluta());
 console.log("Mercedes descrizione chiamata:", Mercedes.numeroChiamateDescrizione());
 console.log("Kia descrizione chiamata:", Kia.numeroChiamateDescrizione());
 console.log("Toyota descrizione chiamata:", Toyota.numeroChiamateDescrizione());
+
+Kia.aggiungiChilometri(10);
+Kia.aggiungiChilometri(5);
+console.log(Kia.mostraContatoreChiamate());
