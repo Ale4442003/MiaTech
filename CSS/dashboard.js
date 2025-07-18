@@ -254,6 +254,10 @@ class Automobile {
     this.chilometraggio = 0;
   }
 
+  get chilometri() {
+    return this.chilometraggio;
+  }
+
   descrizione() {
     this.#incrementaContatore();
     return `Questa macchina è una ${this.marca} ${this.modello} del ${this.anno}.`;
@@ -342,3 +346,5 @@ console.log("Toyota descrizione chiamata:", Toyota.numeroChiamateDescrizione());
 Kia.aggiungiChilometri(10);
 Kia.aggiungiChilometri(5);
 console.log(Kia.mostraContatoreChiamate());
+
+console.log(Kia.chilometri);
