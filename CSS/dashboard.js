@@ -225,126 +225,183 @@ words.sort();
 console.log(expenses, words);
 
 class Automobile {
-  #calcolaEtà() {
-    let annoNow = new Date().getFullYear();
-    return annoNow - this.anno;
-  }
-
-  #contatoreChiamate = 0;
-  #contatoreChilometri = 0;
-
-  #incrementaContatore() {
-    this.#contatoreChiamate++;
-  }
-
-  static confrontaChilometraggio(auto1, auto2) {
-    if (auto1.chilometraggio > auto2.chilometraggio) {
-      return `${auto1.marca} ${auto1.modello} ha più chilometri (${auto1.chilometraggio} km).`;
-    } else if (auto1.chilometraggio < auto2.chilometraggio) {
-      return `${auto2.marca} ${auto2.modello} ha più chilometri (${auto2.chilometraggio} km).`;
-    } else {
-      return `Entrambe le auto hanno lo stesso chilometraggio (${auto1.chilometraggio} km).`;
+    constructor(marca, modello, anno) {
+        this.marca = marca;
+        this.modello = modello;
+        this.anno = anno;
+        this.chilometraggio = 0;
     }
-  }
 
-  constructor(marca, modello, anno) {
-    this.marca = marca;
-    this.modello = modello;
-    this.anno = anno;
-    this.chilometraggio = 0;
-  }
+    #contatoreChiamate = 0;
 
-  get chilometri() {
-    return this.chilometraggio;
-  }
+    #contatoreAggiungiChilometri = 0;
 
-  descrizione() {
-    this.#incrementaContatore();
-    return `Questa macchina è una ${this.marca} ${this.modello} del ${this.anno}.`;
-  }
 
-  numeroChiamateDescrizione() {
-    return this.#contatoreChiamate;
-  }
-
-  aggiungiChilometri(km) {
-    this.chilometraggio += km;
-    this.#contatoreChilometri++;
-  }
-
-  mostraChilometraggio() {
-    return `${this.chilometraggio} km`;
-  }
-
-  mostraEtà() {
-    return `Questa ${this.marca} ${this.modello} ha ${this.#calcolaEtà()} anni.`;
-  }
-
-  _controllaChilometri() {
-    if (this.chilometraggio > 100000) {
-      return "Chilometraggio troppo alto";
-    } else {
-      return "";
+    #incrementaContatore() {
+        this.#contatoreChiamate++;
     }
-  }
 
-  mostraContatoreChiamate() {
-    return this.#contatoreChilometri;
-  }
-}
+    descrizione() {
+        this.#incrementaContatore();
+        return `La mia ${this.marca} ${this.modello} è del ${this.anno}.`
+    }
 
-class Elettrica extends Automobile {
-  constructor(marca, modello, anno, autonomia) {
-    super(marca, modello, anno);
-    this.autonomia = autonomia;
-  }
+    mostraContatoreChiamate() {
+        return this.#contatoreAggiungiChilometri;
+    }
 
-  descrizione() {
-    const base = super.descrizione();
-    const avviso = this._controllaChilometri();
-    return `${base} Ha percorso ${this.chilometraggio} km e ha un'autonomia di ${this.autonomia} km. ${avviso}`;
-  }
+    mostraNumeroDescrizione() {
+        return this.#contatoreChiamate;
+    }
 
-  ricarica(km) {
-    this.autonomia += km;
-  }
+    aggiungiChilometri(km) {
+        this.chilometraggio += km;
+        this.#incrementaContatore();
+        this.#contatoreAggiungiChilometri++;
+    }
+
+    mostraChilometraggio() {
+        return this.chilometraggio;
+    }
+
+    #calcolaEtà() {
+        let annoAttuale = new Date().getFullYear();
+        return annoAttuale - this.anno;
+    }
+
+    mostraEtà() {
+        let età = this.#calcolaEtà();
+        console.log(`La mia auto ha ${età} anni.`);
+    }
+
+    _controllaChilometri() {
+        if (this.chilometraggio > 100000) {
+            alert(`Attenzione a non superarli`);
+            return `Sono troppi km`
+        } else {
+            return `Chilometraggio nella norma`;
+        }
+    }
+
+    static confrontaChilometraggio(auto1, auto2) {
+        if (auto1.chilometraggio > auto2.chilometraggio) {
+            return `${auto1.marca} ${auto1.modello} ha più chilometri (${auto1.chilometraggio} km).`;
+        } else if (auto2.chilometraggio > auto1.chilometraggio) {
+            return `${auto2.marca} ${auto2.modello} ha più chilometri (${auto2.chilometraggio} km).`;
+        } else {
+            return `Hanno lo stesso chilometraggio`;
+        }
+    }
+
+    get chilometraggioAttuale() {
+        return `Chilometraggio attuale: ${this.chilometraggio}`;
+    }
+
+    set nuovoChilometraggio(nuovoValore) {
+        if (nuovoValore >= this.chilometraggio) {
+            console.log(`Nuovo valore chilometraggio`);
+            this.chilometraggio = nuovoValore;
+        } else {
+            console.log(`errore`);
+        }
+    }
+
+    static verificaIstanza(obj, classe) {
+        if (obj instanceof classe) {
+            return `obj è un'istanza di ${classe.name}`;
+        } else {
+            return `obj non è un'istanza di  ${classe.name}`;
+        }
+    }
 }
 
 Automobile.prototype.saluta = function () {
-  return `Ho una ${this.marca} ${this.modello}.`;
+    return `Ehi sono una ${this.marca} ${this.modello}.`;
 }
 
-let Mercedes = new Elettrica("Mercedes", "SUV", 2024, 400);
-let Kia = new Automobile("Kia", "Picanto", 2024);
-let Toyota = new Elettrica("Toyota", "Yaris", 2010, 400);
+class Elettrica extends Automobile {
+    constructor(marca, modello, anno, autonomia) {
+        super(marca, modello, anno);
+        this.autonomia = autonomia;
+    }
 
-Mercedes.aggiungiChilometri(50000);
-Toyota.aggiungiChilometri(20000);
+    descrizione() {
+        let avviso = this._controllaChilometri();
+        if (avviso === `Sono troppi km`) {
+            console.log(avviso);
+        }
 
-console.log(Automobile.confrontaChilometraggio(Mercedes, Toyota));
+        return `La mia ${this.marca} ${this.modello} è del ${this.anno} e ha ${this.autonomia} km di autonomia.`;
+    }
 
-Toyota.aggiungiChilometri(150000);
-console.log(Toyota.descrizione());
+    ricarica(km) {
+        this.autonomia += km;
+    }
+}
 
-console.log(Kia.descrizione());
-Kia.aggiungiChilometri(40);
-console.log(Kia.mostraChilometraggio());
+class Camion extends Automobile {
+    constructor(marca, modello, anno, caricoMassimo,) {
+        super(marca, modello, anno);
+        this.caricoMassimo = caricoMassimo;
+        this.caricoAttuale = 0;
+    }
 
-console.log(Mercedes.descrizione());
-Mercedes.aggiungiChilometri(80);
-Mercedes.ricarica(20);
-console.log(Mercedes.mostraChilometraggio());
-console.log(Mercedes.descrizione());
+    descrizione() {
+        return `La mia ${this.marca} ${this.modello} è del ${this.anno} e il suo carico massimo è ${this.caricoMassimo} mentre adesso trasporta fino a ${this.caricoAttuale} kg.`
+    }
 
-console.log(Kia.saluta());
-console.log(Mercedes.saluta());
+    carica(kg) {
+        if (this.caricoAttuale + kg <= this.caricoMassimo) {
+            this.caricoAttuale += kg;
+            console.log(`${this.caricoAttuale}`);
+        } else {
+            console.log(`Superi il carico massimo di ${this.caricoMassimo}`);
+}
+}
+}
 
-console.log("Mercedes descrizione chiamata:", Mercedes.numeroChiamateDescrizione());
-console.log("Kia descrizione chiamata:", Kia.numeroChiamateDescrizione());
-console.log("Toyota descrizione chiamata:", Toyota.numeroChiamateDescrizione());
+let macchina = new Automobile("Renault", "Clio", 2015);
+console.log(macchina.descrizione());
 
-Kia.aggiungiChilometri(10);
-Kia.aggiungiChilometri(5);
-console.log(Kia.mostraContatoreChiamate());
+macchina.aggiungiChilometri(200);
+console.log(macchina.mostraChilometraggio());
 
-console.log(Kia.chilometri);
+let elettrica = new Elettrica("Renault", "Clio", 2015, 150);
+console.log(elettrica.descrizione());
+
+elettrica.ricarica(50);
+console.log(elettrica.descrizione());
+
+console.log(macchina.saluta());
+console.log(elettrica.saluta());
+
+macchina.mostraEtà();
+
+macchina.aggiungiChilometri(135000);
+console.log(macchina._controllaChilometri());
+
+elettrica.aggiungiChilometri(150)
+console.log(Automobile.confrontaChilometraggio(macchina, elettrica));
+
+console.log(`Numero di chiamate ${ macchina.mostraNumeroDescrizione() } volte`);
+
+console.log(macchina.mostraNumeroDescrizione());
+
+console.log(macchina.mostraContatoreChiamate());
+
+console.log(macchina.chilometraggioAttuale);
+
+macchina.nuovoChilometraggio = 200000;
+
+let camion = new Camion("Mercedes", "Actros", 2022, 12000);
+console.log(camion.descrizione());
+camion.carica(3000);
+console.log(camion.descrizione());
+
+let car = new Automobile("Fiat", "Panda", 2010);
+let coche = new Elettrica("Kia", "Picanto", 2024, 250);
+console.log(car instanceof Automobile);
+console.log(coche instanceof Elettrica);
+
+console.log(Automobile.verificaIstanza(camion, Camion));
+console.log(Automobile.verificaIstanza(elettrica, Elettrica));
