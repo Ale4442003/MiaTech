@@ -485,6 +485,14 @@ console.log(sum(10, 10));
 console.log(sum(5, 10, 15, 20));  
 console.log(sum());               
 
+const data = [5, 10, 15, 20, 25, 30];
+const [first1, second, ...rest] = data;
+
+console.log(first1);
+console.log(second);
+console.log(rest);
+
+
 
 
 
