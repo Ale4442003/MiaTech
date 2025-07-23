@@ -407,7 +407,7 @@ console.log(Automobile.verificaIstanza(camion, Camion));
 console.log(Automobile.verificaIstanza(elettrica, Elettrica));
 
 let values = [1, 2, 3, 4, 5];
-let [first, second] = values;
+let [first, ,third] = values;
 
 console.log(first);
-console.log(second);
+console.log(third);
