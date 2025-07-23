@@ -405,3 +405,9 @@ console.log(coche instanceof Elettrica);
 
 console.log(Automobile.verificaIstanza(camion, Camion));
 console.log(Automobile.verificaIstanza(elettrica, Elettrica));
+
+let values = [1, 2, 3, 4, 5];
+let [first, second] = values;
+
+console.log(first);
+console.log(second);
