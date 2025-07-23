@@ -459,6 +459,11 @@ items[4] = 50;
 console.log(items);
 console.log(copy);
 
+const elements1 = [10, 20, 30, 40, 50];
+const elements2 = [60, 70, 80, 90, 100];
+const combined = [...elements1, ...elements2];
+
+console.log(combined);
 
 
 
