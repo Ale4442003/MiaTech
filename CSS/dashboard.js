@@ -433,5 +433,10 @@ console.log(firstName);
 console.log(lastName);
 console.log(age);
 
+const {firstName:nome, lastName:cognome, age:età} = profile;
+console.log(nome);
+console.log(cognome);
+console.log(età);
+
 
 
