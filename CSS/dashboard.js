@@ -225,139 +225,139 @@ words.sort();
 console.log(expenses, words);
 
 class Automobile {
-    constructor(marca, modello, anno) {
-        this.marca = marca;
-        this.modello = modello;
-        this.anno = anno;
-        this.chilometraggio = 0;
+  constructor(marca, modello, anno) {
+    this.marca = marca;
+    this.modello = modello;
+    this.anno = anno;
+    this.chilometraggio = 0;
+  }
+
+  #contatoreChiamate = 0;
+
+  #contatoreAggiungiChilometri = 0;
+
+
+  #incrementaContatore() {
+    this.#contatoreChiamate++;
+  }
+
+  descrizione() {
+    this.#incrementaContatore();
+    return `La mia ${this.marca} ${this.modello} è del ${this.anno}.`
+  }
+
+  mostraContatoreChiamate() {
+    return this.#contatoreAggiungiChilometri;
+  }
+
+  mostraNumeroDescrizione() {
+    return this.#contatoreChiamate;
+  }
+
+  aggiungiChilometri(km) {
+    this.chilometraggio += km;
+    this.#incrementaContatore();
+    this.#contatoreAggiungiChilometri++;
+  }
+
+  mostraChilometraggio() {
+    return this.chilometraggio;
+  }
+
+  #calcolaEtà() {
+    let annoAttuale = new Date().getFullYear();
+    return annoAttuale - this.anno;
+  }
+
+  mostraEtà() {
+    let età = this.#calcolaEtà();
+    console.log(`La mia auto ha ${età} anni.`);
+  }
+
+  _controllaChilometri() {
+    if (this.chilometraggio > 100000) {
+      alert(`Attenzione a non superarli`);
+      return `Sono troppi km`
+    } else {
+      return `Chilometraggio nella norma`;
     }
+  }
 
-    #contatoreChiamate = 0;
-
-    #contatoreAggiungiChilometri = 0;
-
-
-    #incrementaContatore() {
-        this.#contatoreChiamate++;
+  static confrontaChilometraggio(auto1, auto2) {
+    if (auto1.chilometraggio > auto2.chilometraggio) {
+      return `${auto1.marca} ${auto1.modello} ha più chilometri (${auto1.chilometraggio} km).`;
+    } else if (auto2.chilometraggio > auto1.chilometraggio) {
+      return `${auto2.marca} ${auto2.modello} ha più chilometri (${auto2.chilometraggio} km).`;
+    } else {
+      return `Hanno lo stesso chilometraggio`;
     }
+  }
 
-    descrizione() {
-        this.#incrementaContatore();
-        return `La mia ${this.marca} ${this.modello} è del ${this.anno}.`
-    }
+  get chilometraggioAttuale() {
+    return `Chilometraggio attuale: ${this.chilometraggio}`;
+  }
 
-    mostraContatoreChiamate() {
-        return this.#contatoreAggiungiChilometri;
+  set nuovoChilometraggio(nuovoValore) {
+    if (nuovoValore >= this.chilometraggio) {
+      console.log(`Nuovo valore chilometraggio`);
+      this.chilometraggio = nuovoValore;
+    } else {
+      console.log(`errore`);
     }
+  }
 
-    mostraNumeroDescrizione() {
-        return this.#contatoreChiamate;
+  static verificaIstanza(obj, classe) {
+    if (obj instanceof classe) {
+      return `obj è un'istanza di ${classe.name}`;
+    } else {
+      return `obj non è un'istanza di  ${classe.name}`;
     }
-
-    aggiungiChilometri(km) {
-        this.chilometraggio += km;
-        this.#incrementaContatore();
-        this.#contatoreAggiungiChilometri++;
-    }
-
-    mostraChilometraggio() {
-        return this.chilometraggio;
-    }
-
-    #calcolaEtà() {
-        let annoAttuale = new Date().getFullYear();
-        return annoAttuale - this.anno;
-    }
-
-    mostraEtà() {
-        let età = this.#calcolaEtà();
-        console.log(`La mia auto ha ${età} anni.`);
-    }
-
-    _controllaChilometri() {
-        if (this.chilometraggio > 100000) {
-            alert(`Attenzione a non superarli`);
-            return `Sono troppi km`
-        } else {
-            return `Chilometraggio nella norma`;
-        }
-    }
-
-    static confrontaChilometraggio(auto1, auto2) {
-        if (auto1.chilometraggio > auto2.chilometraggio) {
-            return `${auto1.marca} ${auto1.modello} ha più chilometri (${auto1.chilometraggio} km).`;
-        } else if (auto2.chilometraggio > auto1.chilometraggio) {
-            return `${auto2.marca} ${auto2.modello} ha più chilometri (${auto2.chilometraggio} km).`;
-        } else {
-            return `Hanno lo stesso chilometraggio`;
-        }
-    }
-
-    get chilometraggioAttuale() {
-        return `Chilometraggio attuale: ${this.chilometraggio}`;
-    }
-
-    set nuovoChilometraggio(nuovoValore) {
-        if (nuovoValore >= this.chilometraggio) {
-            console.log(`Nuovo valore chilometraggio`);
-            this.chilometraggio = nuovoValore;
-        } else {
-            console.log(`errore`);
-        }
-    }
-
-    static verificaIstanza(obj, classe) {
-        if (obj instanceof classe) {
-            return `obj è un'istanza di ${classe.name}`;
-        } else {
-            return `obj non è un'istanza di  ${classe.name}`;
-        }
-    }
+  }
 }
 
 Automobile.prototype.saluta = function () {
-    return `Ehi sono una ${this.marca} ${this.modello}.`;
+  return `Ehi sono una ${this.marca} ${this.modello}.`;
 }
 
 class Elettrica extends Automobile {
-    constructor(marca, modello, anno, autonomia) {
-        super(marca, modello, anno);
-        this.autonomia = autonomia;
+  constructor(marca, modello, anno, autonomia) {
+    super(marca, modello, anno);
+    this.autonomia = autonomia;
+  }
+
+  descrizione() {
+    let avviso = this._controllaChilometri();
+    if (avviso === `Sono troppi km`) {
+      console.log(avviso);
     }
 
-    descrizione() {
-        let avviso = this._controllaChilometri();
-        if (avviso === `Sono troppi km`) {
-            console.log(avviso);
-        }
+    return `La mia ${this.marca} ${this.modello} è del ${this.anno} e ha ${this.autonomia} km di autonomia.`;
+  }
 
-        return `La mia ${this.marca} ${this.modello} è del ${this.anno} e ha ${this.autonomia} km di autonomia.`;
-    }
-
-    ricarica(km) {
-        this.autonomia += km;
-    }
+  ricarica(km) {
+    this.autonomia += km;
+  }
 }
 
 class Camion extends Automobile {
-    constructor(marca, modello, anno, caricoMassimo,) {
-        super(marca, modello, anno);
-        this.caricoMassimo = caricoMassimo;
-        this.caricoAttuale = 0;
-    }
+  constructor(marca, modello, anno, caricoMassimo,) {
+    super(marca, modello, anno);
+    this.caricoMassimo = caricoMassimo;
+    this.caricoAttuale = 0;
+  }
 
-    descrizione() {
-        return `La mia ${this.marca} ${this.modello} è del ${this.anno} e il suo carico massimo è ${this.caricoMassimo} mentre adesso trasporta fino a ${this.caricoAttuale} kg.`
-    }
+  descrizione() {
+    return `La mia ${this.marca} ${this.modello} è del ${this.anno} e il suo carico massimo è ${this.caricoMassimo} mentre adesso trasporta fino a ${this.caricoAttuale} kg.`
+  }
 
-    carica(kg) {
-        if (this.caricoAttuale + kg <= this.caricoMassimo) {
-            this.caricoAttuale += kg;
-            console.log(`${this.caricoAttuale}`);
-        } else {
-            console.log(`Superi il carico massimo di ${this.caricoMassimo}`);
-}
-}
+  carica(kg) {
+    if (this.caricoAttuale + kg <= this.caricoMassimo) {
+      this.caricoAttuale += kg;
+      console.log(`${this.caricoAttuale}`);
+    } else {
+      console.log(`Superi il carico massimo di ${this.caricoMassimo}`);
+    }
+  }
 }
 
 let macchina = new Automobile("Renault", "Clio", 2015);
@@ -383,7 +383,7 @@ console.log(macchina._controllaChilometri());
 elettrica.aggiungiChilometri(150)
 console.log(Automobile.confrontaChilometraggio(macchina, elettrica));
 
-console.log(`Numero di chiamate ${ macchina.mostraNumeroDescrizione() } volte`);
+console.log(`Numero di chiamate ${macchina.mostraNumeroDescrizione()} volte`);
 
 console.log(macchina.mostraNumeroDescrizione());
 
@@ -407,16 +407,31 @@ console.log(Automobile.verificaIstanza(camion, Camion));
 console.log(Automobile.verificaIstanza(elettrica, Elettrica));
 
 let values = [1, 2, 3, 4, 5];
-let [first, ,third] = values;
+let [first, , third] = values;
 
 console.log(first);
 console.log(third);
 
 const fruits = ['apple', 'banana', 'cherry'];
-const [x, y, z , a ='kiwi', b ='watermelon'] = fruits;
+const [x, y, z, a = 'kiwi', b = 'watermelon'] = fruits;
 
 console.log(x);
 console.log(y);
 console.log(z);
 console.log(a);
 console.log(b);
+
+const profile = {
+  firstName: 'Marco',
+  lastName: 'Rossi',
+  age: 21
+};
+
+const { firstName, lastName, age} = profile;
+
+console.log(firstName);
+console.log(lastName);
+console.log(age);
+
+
+
