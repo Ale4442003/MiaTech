@@ -492,7 +492,18 @@ console.log(first1);
 console.log(second);
 console.log(rest);
 
+const person = {
+  name1: 'Giulia',
+  surname: 'Rossi',
+  age: 35,
+  job: 'teacher'
+}
 
+const {name1, surname, ...restanti} = person
+
+console.log(name1);
+console.log(surname);
+console.log(restanti);
 
 
 
