@@ -476,6 +476,14 @@ const copybook = {...harryPotterBook, year:1997};
 console.log(copybook);
 console.log(harryPotterBook);
 
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 4, 6));        
+console.log(sum(10, 10));         
+console.log(sum(5, 10, 15, 20));  
+console.log(sum());               
 
 
 
