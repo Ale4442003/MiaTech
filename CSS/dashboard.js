@@ -438,5 +438,16 @@ console.log(nome);
 console.log(cognome);
 console.log(età);
 
+const game = {
+  title: 'The Legend of Zelda',
+};
+
+const { title, platform = 'Nintendo Switch', releaseYear = 2017} = game;
+
+console.log(title);
+console.log(platform);
+console.log(releaseYear);
+
+
 
 
