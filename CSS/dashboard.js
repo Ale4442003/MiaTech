@@ -471,8 +471,11 @@ const harryPotterBook = {
   book: 'Harry Potter and the Philosopher\'s Stone',
 }
 
-const copybook = {...harryPotterBook};
+const copybook = {...harryPotterBook, year:1997};
+
 console.log(copybook);
+console.log(harryPotterBook);
+
 
 
 
