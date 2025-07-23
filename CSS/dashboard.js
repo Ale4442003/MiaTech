@@ -427,13 +427,13 @@ const profile = {
   age: 21
 };
 
-const { firstName, lastName, age} = profile;
+const { firstName, lastName, age } = profile;
 
 console.log(firstName);
 console.log(lastName);
 console.log(age);
 
-const {firstName:nome, lastName:cognome, age:età} = profile;
+const { firstName: nome, lastName: cognome, age: età } = profile;
 console.log(nome);
 console.log(cognome);
 console.log(età);
@@ -442,7 +442,7 @@ const game = {
   title: 'The Legend of Zelda',
 };
 
-const { title, platform = 'Nintendo Switch', releaseYear = 2017} = game;
+const { title, platform = 'Nintendo Switch', releaseYear = 2017 } = game;
 
 console.log(title);
 console.log(platform);
@@ -464,6 +464,17 @@ const elements2 = [60, 70, 80, 90, 100];
 const combined = [...elements1, ...elements2];
 
 console.log(combined);
+
+const harryPotterBook = {
+  author: 'J.K. Rowling',
+  series: 'Harry Potter',
+  book: 'Harry Potter and the Philosopher\'s Stone',
+}
+
+const copybook = {...harryPotterBook};
+console.log(copybook);
+
+
 
 
 
