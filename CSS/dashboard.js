@@ -411,3 +411,12 @@ let [first, ,third] = values;
 
 console.log(first);
 console.log(third);
+
+const fruits = ['apple', 'banana', 'cherry'];
+const [x, y, z , a ='kiwi', b ='watermelon'] = fruits;
+
+console.log(x);
+console.log(y);
+console.log(z);
+console.log(a);
+console.log(b);
