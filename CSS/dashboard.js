@@ -1,4 +1,4 @@
-let fistName = "Alessandra";
+/*let fistName = "Alessandra";
 console.log(fistName);
 
 const cap = 24100;
@@ -404,7 +404,7 @@ console.log(car instanceof Automobile);
 console.log(coche instanceof Elettrica);
 
 console.log(Automobile.verificaIstanza(camion, Camion));
-console.log(Automobile.verificaIstanza(elettrica, Elettrica));
+console.log(Automobile.verificaIstanza(elettrica, Elettrica));*/
 
 let values = [1, 2, 3, 4, 5];
 let [first, , third] = values;
@@ -447,6 +447,17 @@ const { title, platform = 'Nintendo Switch', releaseYear = 2017} = game;
 console.log(title);
 console.log(platform);
 console.log(releaseYear);
+
+const items = [1, 2, 3, 4, 5];
+const copy = [...items];
+
+console.log(items);
+console.log(copy);
+
+items[4] = 50;
+
+console.log(items);
+console.log(copy);
 
 
 
