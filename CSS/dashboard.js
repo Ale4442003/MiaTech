@@ -570,3 +570,15 @@ console.log(numero);
 console.log(frase);
 console.log(animali);
 console.log(colori);
+
+const esito = "errore";
+
+if (esito === "errore") {
+  console.error("errore: si è verificato un problema");
+} else if (esito === "avviso") {
+  console.warn("Avviso: non funzionare.");
+} else {
+  console.log("Nessun problema rilevato.");
+}
+
+
