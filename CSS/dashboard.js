@@ -530,3 +530,13 @@ console.log(json1);
 const name3 = "Sophia";
 const cognome3 = "Bianchi";
 console.log(`ciao, mi chiamo ${name3} ${cognome3}.` );
+
+const nombre = `Nicole`;
+const apellido = `Romano`;
+const edad = 25;
+const ciudad = `Milano`;
+const vecina = `Sono ${nombre} ${apellido}, 
+ho ${edad} 
+e vivo a ${ciudad} da sola.`;
+
+console.log(vecina);
