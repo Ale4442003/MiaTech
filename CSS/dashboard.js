@@ -505,6 +505,15 @@ console.log(name1);
 console.log(surname);
 console.log(restanti);
 
+const persona = {
+  nome: "Alessandra",
+  età: 21,
+  hobby: ["lettura", "musica", "javascript"],
+};
+
+const json = JSON.stringify(persona);
+console.log(json);
+
 
 
 
