@@ -619,3 +619,17 @@ setTimeout(() => {
   clearInterval(time);
   console.log('stop');
 }, 5000);
+
+try {
+  let dividend = 12;
+  let divisor = 10;
+  if (divisor === 0) {
+    throw new Error("errore se il dividìsore è 0");
+  }
+
+  let result = dividend/divisor;
+  console.log("Risultato:" + result);
+
+} catch(err) {
+  console.log('Errore trovato:' + err.message);
+}
