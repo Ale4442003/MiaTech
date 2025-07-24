@@ -514,6 +514,5 @@ const persona = {
 const json = JSON.stringify(persona);
 console.log(json);
 
-
-
-
+const oggetto = JSON.parse(json);
+console.log(oggetto);
