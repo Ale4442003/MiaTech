@@ -605,14 +605,17 @@ function timer() {
 
 setTimeout(timer, 3000);
 
-/*let numberRepeat = 0;
-let repeat = setInterval(() => {
-  console.log(numberRepeat);
-  numberRepeat++;
-  if (numberRepeat === 5) clearInterval(repeat);
-}, 2000);*/
-
 function repeat () {
   console.log('Hello world');
 }
 setInterval(repeat, 2000);
+
+function message () {
+  console.log('Loop massimo 5 volte');
+}
+let time = setInterval(message, 1000);
+
+setTimeout(() => {
+  clearInterval(time);
+  console.log('stop');
+}, 5000);
