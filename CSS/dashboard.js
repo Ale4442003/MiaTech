@@ -604,3 +604,10 @@ function timer() {
 }
 
 setTimeout(timer, 3000);
+
+let numberRepeat = 0;
+let repeat = setInterval(() => {
+  console.log(numberRepeat);
+  numberRepeat++;
+  if (numberRepeat === 5) clearInterval(repeat);
+}, 2000);
