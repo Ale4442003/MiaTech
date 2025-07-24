@@ -599,3 +599,8 @@ regioni.forEach(r => {
 
 console.groupEnd();
 
+function timer() {
+  console.log('Che ore sono?');
+}
+
+setTimeout(timer, 3000);
