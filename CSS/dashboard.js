@@ -581,4 +581,21 @@ if (esito === "errore") {
   console.log("Nessun problema rilevato.");
 }
 
+const regioni = [
+  { regione: "Lombardia", capoluogo: "Milano" },
+  { regione: "Lazio", capoluogo: "Roma" },
+  { regione: "Sicilia", capoluogo: "Palermo" }
+];
+
+console.table(regioni);
+
+console.group("Regioni italiane");
+
+regioni.forEach(r => {
+  console.log(`Regione: ${r.regione}`);
+  console.log(`capoluogo: ${r.capoluogo}`);
+  console.log("---");
+});
+
+console.groupEnd();
 
