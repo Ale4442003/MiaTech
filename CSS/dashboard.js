@@ -605,9 +605,14 @@ function timer() {
 
 setTimeout(timer, 3000);
 
-let numberRepeat = 0;
+/*let numberRepeat = 0;
 let repeat = setInterval(() => {
   console.log(numberRepeat);
   numberRepeat++;
   if (numberRepeat === 5) clearInterval(repeat);
-}, 2000);
+}, 2000);*/
+
+function repeat () {
+  console.log('Hello world');
+}
+setInterval(repeat, 2000);
