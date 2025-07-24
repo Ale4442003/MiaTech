@@ -516,3 +516,13 @@ console.log(json);
 
 const oggetto = JSON.parse(json);
 console.log(oggetto);
+
+const testo = '[{"nome": "Gaia", "età": 21}, {"nome": "Davide", "età": 23}]'
+const oggetto1 = JSON.parse(testo);
+
+console.log(oggetto1);
+
+oggetto1.push({nome: "Sara", età: 22 });
+
+const json1 = JSON.stringify(oggetto1);
+console.log(json1);
