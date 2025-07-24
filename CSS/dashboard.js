@@ -471,7 +471,7 @@ const harryPotterBook = {
   book: 'Harry Potter and the Philosopher\'s Stone',
 }
 
-const copybook = {...harryPotterBook, year:1997};
+const copybook = { ...harryPotterBook, year: 1997 };
 
 console.log(copybook);
 console.log(harryPotterBook);
@@ -480,10 +480,10 @@ function sum(...numbers) {
   return numbers.reduce((total, num) => total + num, 0);
 }
 
-console.log(sum(1, 4, 6));        
-console.log(sum(10, 10));         
-console.log(sum(5, 10, 15, 20));  
-console.log(sum());               
+console.log(sum(1, 4, 6));
+console.log(sum(10, 10));
+console.log(sum(5, 10, 15, 20));
+console.log(sum());
 
 const data = [5, 10, 15, 20, 25, 30];
 const [first1, second, ...rest] = data;
@@ -499,7 +499,7 @@ const person = {
   job: 'teacher'
 }
 
-const {name1, surname, ...restanti} = person
+const { name1, surname, ...restanti } = person
 
 console.log(name1);
 console.log(surname);
@@ -522,14 +522,14 @@ const oggetto1 = JSON.parse(testo);
 
 console.log(oggetto1);
 
-oggetto1.push({nome: "Sara", età: 22 });
+oggetto1.push({ nome: "Sara", età: 22 });
 
 const json1 = JSON.stringify(oggetto1);
 console.log(json1);
 
 const name3 = "Sophia";
 const cognome3 = "Bianchi";
-console.log(`ciao, mi chiamo ${name3} ${cognome3}.` );
+console.log(`ciao, mi chiamo ${name3} ${cognome3}.`);
 
 const nombre = `Nicole`;
 const apellido = `Romano`;
@@ -540,3 +540,19 @@ ho ${edad}
 e vivo a ${ciudad} da sola.`;
 
 console.log(vecina);
+
+function Profilo(user) {
+  return `Mi chiamo ${user.nome3} ${user.cognome3}, 
+ho ${user.età3} 
+e vivo a ${user.città3} da sola.`
+}
+
+const userEx = {
+  nome3: "Nicole",
+  cognome3: "Romano",
+  età3: 25,
+  città3: "Milano"
+}
+
+const descrizione = Profilo(userEx);
+console.log(descrizione);
