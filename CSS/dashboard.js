@@ -526,3 +526,7 @@ oggetto1.push({nome: "Sara", età: 22 });
 
 const json1 = JSON.stringify(oggetto1);
 console.log(json1);
+
+const name3 = "Sophia";
+const cognome3 = "Bianchi";
+console.log(`ciao, mi chiamo ${name3} ${cognome3}.` );
