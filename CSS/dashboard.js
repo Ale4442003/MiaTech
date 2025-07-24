@@ -556,3 +556,17 @@ const userEx = {
 
 const descrizione = Profilo(userEx);
 console.log(descrizione);
+
+const numero = 57;
+const frase = "Oggi è il mio compleanno";
+const animali = ["gatto", "cane", "coniglio", "pesce", "criceto"];
+const colori = {
+  "giallo + rosso": "arancione",
+  "giallo + blu": "verde",
+  "rosso + blu": "viola"
+};
+
+console.log(numero);
+console.log(frase);
+console.log(animali);
+console.log(colori);
