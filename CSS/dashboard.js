@@ -654,3 +654,19 @@ function value(stringa) {
 
 value("Alessandra");
 value(2025);
+
+let ab = 10;
+let bc = 20;
+
+try {
+  if (ab >= bc) {
+    const result = ab + bc;
+    console.log('Risultato ' + result);
+  } else {
+    throw new Error("Numeri maggiori");
+  }
+} catch(error) {
+  console.log(error.message);
+} finally {
+  console.log("operazione completata");
+}
