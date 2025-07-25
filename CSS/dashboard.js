@@ -605,7 +605,7 @@ function timer() {
 
 setTimeout(timer, 3000);
 
-function repeat () {
+/*function repeat () {
   console.log('Hello world');
 }
 setInterval(repeat, 2000);
@@ -619,7 +619,7 @@ setTimeout(() => {
   clearInterval(time);
   console.log('stop');
 }, 5000);
-
+*/
 try {
   let dividend = 12;
   let divisor = 10;
@@ -633,3 +633,24 @@ try {
 } catch(err) {
   console.log('Errore trovato:' + err.message);
 }
+
+function value(stringa) {
+  try {
+    if (typeof stringa !== 'string') {
+      throw new TypeError("Deve essere una stringa");
+    } 
+
+    let result = stringa.length;
+    console.log("risultato", result);
+
+  } catch (error) {
+    if (error instanceof TypeError) {
+      console.log("Errore di tipo:", error.message);
+    } else {
+      console.log("Errore generico:", error.message);
+    }
+  }
+}
+
+value("Alessandra");
+value(2025);
