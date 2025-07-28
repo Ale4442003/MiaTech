@@ -698,3 +698,14 @@ function stamp(valore) {
 }
 
 multiplication(stamp);
+
+function funzione1(callback) {
+  console.log("Domani inizia la scuola");
+  callback();
+}
+
+function funzione2() {
+  console.log("Non è vero, inizia settimana prossima");
+}
+
+funzione1(funzione2);
