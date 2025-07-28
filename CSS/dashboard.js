@@ -712,12 +712,21 @@ funzione1(funzione2);
 
 function promise() {
   return new Promise((resolve, reject) => {
+    const condition = true;
     setTimeout(() => {
-      resolve("Dopo 2 secondi");
+      if (condition) {
+          resolve("Promise accettata");
+      } else {
+          reject("Promise rifiutata");
+      }
     }, 2000);
   })
 }
 
-promise().then((message) => {
-  console.log(message);
-});
+promise()
+.then((message) => {
+  console.log("accettata", message);
+})
+.catch((error) => {
+  console.log("Rifiutata", error);
+})
