@@ -773,3 +773,24 @@ myPromise()
   .then((result) => {
     console.log("Risultato", result);
   })
+
+  function value() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(10);
+      }, 1000);
+    })
+  }
+
+  value()
+  .then((num) => {
+    if (num % 2 === 0) {
+      return num * 2;
+    } else {
+      return num + 1;
+    }
+  })
+
+  .then((result) => {
+    console.log("Risultato", result);
+  });
