@@ -730,3 +730,27 @@ promise()
 .catch((error) => {
   console.log("Rifiutata", error);
 })
+
+function myPromise() {
+  return new Promise((resolve, reject) => {
+    const condition = false;
+    setTimeout(() => {
+     if (condition) {
+          resolve(" Tutto ok");
+      } else {
+          reject("Errore");
+      }
+    }, 2000);
+  })
+}
+
+myPromise()
+.then((message) => {
+    console.log("Tutto ok:", message);
+  })
+  .catch((error) => {
+    console.log("Errore:", error);
+  })
+  .finally(() => {
+    console.log("Operazione completata");
+  });
