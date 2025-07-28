@@ -709,3 +709,15 @@ function funzione2() {
 }
 
 funzione1(funzione2);
+
+function promise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Dopo 2 secondi");
+    }, 2000);
+  })
+}
+
+promise().then((message) => {
+  console.log(message);
+});
