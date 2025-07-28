@@ -684,3 +684,17 @@ function result() {
 }
 
 calcola(result);
+
+function multiplication(callback) {
+  const a = 5;
+  const b = 3;
+  const result = a * b;
+  console.log(result);
+   callback(result);
+}
+
+function stamp(valore) {
+  console.log("Callback", valore);
+}
+
+multiplication(stamp);
