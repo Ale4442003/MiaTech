@@ -670,3 +670,17 @@ try {
 } finally {
   console.log("operazione completata");
 }
+
+function calcola(callback) {
+  const a = 15;
+  const b = 20;
+  const risultato = a + b;
+  console.log(risultato);
+  callback();
+}
+
+function result() {
+  console.log("Callback");
+}
+
+calcola(result);
