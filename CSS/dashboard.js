@@ -754,3 +754,22 @@ myPromise()
   .finally(() => {
     console.log("Operazione completata");
   });
+
+  function number() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(3);
+      }, 1000);
+    })
+  }
+
+  number()
+  .then((num) => {
+    return num * 2;
+  })
+  .then((num) => {
+    return num + 3;
+  })
+  .then((result) => {
+    console.log("Risultato", result);
+  })
