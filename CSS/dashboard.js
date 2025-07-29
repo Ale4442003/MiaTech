@@ -823,3 +823,12 @@ chaningPromise()
   .catch((err) => {
     console.error("Errore nella promessa:", err);
   });
+
+  let myPromessa = new Promise(( resolve, reject) => {
+    reject("messaggio errore");
+  });
+
+  myPromessa 
+    .catch(error => {
+      console.log(error);
+    });
