@@ -794,3 +794,32 @@ myPromise()
   .then((result) => {
     console.log("Risultato", result);
   });
+
+  function chaningPromise() {
+    return new Promise((resolve, reject) => {
+      const random = Math.random();
+      console.log("Numero", random);
+
+      if (random>0.3) {
+        resolve(random);
+      } else {
+        reject("Numero basso!");
+      }
+    })
+  }
+
+  chaningPromise()
+    .then((num) => {
+    console.log("Numero ricevuto:", num);
+    return num * 3; 
+  })
+  .then((newNum) => {
+    console.log("Numero moltiplicato:", newNum);
+    return newNum + 1;
+  })
+  .then((finalResult) => {
+    console.log("Risultato finale:", finalResult);
+  })
+  .catch((err) => {
+    console.error("Errore nella promessa:", err);
+  });
