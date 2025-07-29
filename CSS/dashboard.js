@@ -866,3 +866,27 @@ randomPromise
 .catch(error => {
   console.error("Errore", error);
 })
+
+function ritardo1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("1 secondo");
+    }, 1000);
+  })
+  }
+
+  function ritardo2() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("2 secondi");
+      }, 2000);
+    })
+  }
+
+  Promise.all([ritardo1(), ritardo2()])
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
