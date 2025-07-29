@@ -832,3 +832,20 @@ chaningPromise()
     .catch(error => {
       console.log(error);
     });
+
+  let item = new Promise((resolve, reject) => {
+  const condition = true;
+  if (condition === true) {
+    resolve("Risolto");
+  } else {
+    reject("Errore");
+  }
+});
+
+item
+  .then(result => {
+    console.log(result); 
+  })
+  .catch(error => {
+    console.log(error);
+  });
