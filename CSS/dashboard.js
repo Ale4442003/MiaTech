@@ -890,3 +890,27 @@ function ritardo1() {
   .catch((error) => {
     console.log(error);
   })
+
+ function verifica1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("1 sec");
+    }, 1000);
+  })
+  }
+
+  function verifica2() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("2 sec");
+      }, 2000);
+    })
+  }
+
+  Promise.race([verifica1(), verifica2()])
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
