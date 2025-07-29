@@ -849,3 +849,20 @@ item
   .catch(error => {
     console.log(error);
   });
+
+ let randomPromise = new Promise((resolve, reject) => {
+  const result = Math.random();
+  if (result > 0.5) {
+    resolve(result);
+  } else {
+    reject("Numero troppo basso");
+  }
+});
+
+randomPromise
+.then(result => {
+  console.log("Tutto apposto", result);
+})
+.catch(error => {
+  console.error("Errore", error);
+})
