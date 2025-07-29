@@ -795,27 +795,27 @@ myPromise()
     console.log("Risultato", result);
   });
 
-  function chaningPromise() {
-    return new Promise((resolve, reject) => {
-      const random = Math.random();
-      console.log("Numero", random);
+function chaningPromise() {
+  return new Promise((resolve, reject) => {
+    const random = Math.random();
+    console.log("Numero", random);
 
-      if (random>0.3) {
-        resolve(random);
-      } else {
-        reject("Numero basso!");
-      }
-    })
-  }
+    if (random > 0.3) {
+      resolve(random);
+    } else {
+      reject("Numero basso!");
+    }
+  });
+}
 
-  chaningPromise()
-    .then((num) => {
-    console.log("Numero ricevuto:", num);
-    return num * 3; 
+chaningPromise()
+  .then((number) => {
+    console.log("Numero ricevuto:", number);
+    return number * 3; 
   })
-  .then((newNum) => {
-    console.log("Numero moltiplicato:", newNum);
-    return newNum + 1;
+  .then((newNumbers) => {
+    console.log("Numero moltiplicato:", newNumbers);
+    return newNumbers + 1;
   })
   .then((finalResult) => {
     console.log("Risultato finale:", finalResult);
