@@ -914,3 +914,32 @@ function ritardo1() {
   .catch((error) => {
     console.log(error);
   })
+
+  function promise1() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Prima");
+      }, 3000);
+    })
+  }
+
+  function promise2() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject("Seconda");
+      }, 5000);
+    })
+  }
+
+  function promise3() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Terza");
+      }, 7000);
+    })
+  }
+
+  Promise.allSettled([promise1(), promise2(), promise3()])
+  .then((result) => {
+    console.log(result);
+  })
