@@ -1003,3 +1003,16 @@ async function function3() {
 }
 
 function3();
+
+function newDati() {
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+.then(response => response.json())
+.then(data => {
+  console.log('Dati ricevuti', data);
+})
+.catch(error => {
+  console.error('Errore:', error)
+});
+}
+
+newDati();
