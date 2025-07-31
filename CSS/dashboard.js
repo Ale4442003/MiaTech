@@ -977,3 +977,29 @@ function ritardo1() {
 
 nuovaPromise(true);  
 nuovaPromise(false); 
+
+async function function1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("1 secondo");
+    }, 1000);
+  });
+}
+
+async function function2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("2 secondi");
+    }, 2000);
+  });
+}
+
+async function function3() {
+  const risultato1 = await function1();
+  console.log(risultato1);
+
+  const risultato2 = await function2();
+  console.log(risultato2);
+}
+
+function3();
