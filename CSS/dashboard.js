@@ -943,3 +943,16 @@ function ritardo1() {
   .then((result) => {
     console.log(result);
   })
+
+  const promessa2 = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("risolto");
+    }, 2000);
+  })
+
+  async function news() {
+    const result = await promessa2;
+    console.log(result);
+  }
+
+  news();
