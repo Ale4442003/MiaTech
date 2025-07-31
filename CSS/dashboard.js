@@ -956,3 +956,24 @@ function ritardo1() {
   }
 
   news();
+
+ async function nuovaPromise(Corretto) {
+  try {
+    const result = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (Corretto) {
+          resolve("Tutto ok");
+        } else {
+          reject("Errore");
+        }
+      }, 2000);
+    });
+
+    console.log(result); 
+  } catch (errore) {
+    console.error(errore); 
+  }
+}
+
+nuovaPromise(true);  
+nuovaPromise(false); 
