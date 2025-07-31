@@ -1016,3 +1016,27 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 }
 
 newDati();
+
+function newPost() {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: 'Titolo',
+      body: 'Contenuto',
+      userId: 1
+    })
+  })
+
+.then(response => response.json())
+.then(data => {
+  console.log('Risposta dal server:', data);
+})
+.catch(error => {
+  console.error('Errore', error);
+});
+}
+
+newPost();
