@@ -1056,3 +1056,12 @@ async function argument() {
 }
 
 argument();
+
+fetch('http://example.com')
+  .then(response => response.text())
+  .then(data => {
+    console.log('Risposta:', data);
+  })
+  .catch(error => {
+    console.error('Errore:', error);
+  });
