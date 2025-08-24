@@ -1004,42 +1004,37 @@ async function function3() {
 
 function3();
 
-function newDati() {
-fetch('https://jsonplaceholder.typicode.com/posts/1')
-.then(response => response.json())
-.then(data => {
-  console.log('Dati ricevuti', data);
-})
-.catch(error => {
-  console.error('Errore:', error)
-});
-}
+async function newDati() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    if (!response.ok) throw new Error('Errore ' + response.status);
 
+    const data = await response.json();
+    console.log('Dati ricevuti:', data);
+  } catch (error) {
+    console.error('Errore GET:', error.message);
+  }
+}
 newDati();
 
-function newPost() {
-  fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      title: 'Titolo',
-      body: 'Contenuto',
-      userId: 1
-    })
-  })
+async function newPost() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: 'Titolo', body: 'Contenuto', userId: 1 }),
+    });
 
-.then(response => response.json())
-.then(data => {
-  console.log('Risposta dal server:', data);
-})
-.catch(error => {
-  console.error('Errore', error);
-});
+    if (!response.ok) throw new Error('Errore' + response.status);
+
+    const data = await response.json();
+    console.log('Risposta :', data);
+  } catch (error) {
+    console.error('Errore POST:', error.message);
+  }
 }
-
 newPost();
+
 
 async function argument() {
   try {
