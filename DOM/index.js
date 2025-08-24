@@ -6,3 +6,6 @@ const myText = document.getElementById("description");
 console.log(myText);
 
 myText.innerText = "This is a new paragraph using innerText";
+
+myText.style.backgroundColor = "yellow";
+myText.style.fontSize = "35px"
