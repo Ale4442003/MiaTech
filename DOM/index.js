@@ -22,7 +22,19 @@ console.log("getItem:", username2);
 sessionStorage.removeItem("username");
 console.log("RemoveItem:", sessionStorage.getItem("username"));
 
+localStorage.setItem("username", "Giulia");
+console.log("LocalStorage - SetItem:", localStorage.getItem("username"));
+let localUsername = localStorage.getItem("username");
+console.log("LocalStorage - GetItem:", localUsername);
+localStorage.removeItem("username");
+console.log("LocalStorage - RemoveItem:", localStorage.getItem("username"));
 
+sessionStorage.setItem("username", "Marco");
+console.log("SessionStorage - SetItem:", sessionStorage.getItem("username"));
+let sessionUsername = sessionStorage.getItem("username");
+console.log("SessionStorage - GetItem:", sessionUsername);
+sessionStorage.removeItem("username");
+console.log("SessionStorage - RemoveItem:", sessionStorage.getItem("username"));
 
 const list = document.createElement("ul");
 
