@@ -15,6 +15,14 @@ console.log("GetItem:", username);
 localStorage.removeItem("username");
 console.log("RemoveItem:", localStorage.getItem("username"));
 
+sessionStorage.setItem("username", "Alessandra");
+console.log("setItem:", sessionStorage.getItem("username"));
+let username2 = sessionStorage.getItem("username");
+console.log("getItem:", username2);
+sessionStorage.removeItem("username");
+console.log("RemoveItem:", sessionStorage.getItem("username"));
+
+
 
 const list = document.createElement("ul");
 
