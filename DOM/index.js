@@ -1,6 +1,13 @@
 const paragraph = document.getElementById("text");
 const paragraph2 = document.querySelector(".text2");
 const myText = document.getElementById("description");
+document.cookie = "username=Alessandra; expires=Fri, 30 Aug 2024 12:00:00 UTC; path=/";
+console.log("Create a cookie", document.cookie);
+let cookie = document.cookie;
+console.log("cookie", cookie);
+document.cookie = "username=Alessandra; expires=Fri, 30 Aug 1900 12:00:00 UTC; path=/";
+console.log("Delete cookie", document.cookie);
+
 const list = document.createElement("ul");
 
 const user = document.createElement("li");
