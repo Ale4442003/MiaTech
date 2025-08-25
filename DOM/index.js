@@ -8,6 +8,14 @@ console.log("cookie", cookie);
 document.cookie = "username=Alessandra; expires=Fri, 30 Aug 1900 12:00:00 UTC; path=/";
 console.log("Delete cookie", document.cookie);
 
+localStorage.setItem("username", "Alessandra");
+console.log("SetItem:", localStorage.getItem("username"));
+let username = localStorage.getItem("username");
+console.log("GetItem:", username);
+localStorage.removeItem("username");
+console.log("RemoveItem:", localStorage.getItem("username"));
+
+
 const list = document.createElement("ul");
 
 const user = document.createElement("li");
