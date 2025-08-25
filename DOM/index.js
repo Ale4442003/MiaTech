@@ -65,3 +65,16 @@ console.log(myText);
 myText.innerHTML = "This is a new paragraph using innerHTML with a botton <button>Click</button>";
 myText.style.backgroundColor = "yellow";
 myText.style.fontSize = "35px"
+
+const form = document.getElementById("Form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const nome = document.getElementById("nome");
+  const cognome = document.getElementById("cognome");
+  if (nome === "" || cognome === "") {
+    alert("Compilare");
+  } else {
+    alert("Form inviat con successo!");
+    form.submit();
+  }
+});
