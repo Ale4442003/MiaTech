@@ -21,13 +21,11 @@ const user8 = document.createElement("li");
 user8.innerText = "Eighth user";
 
 list.append(user, user2, user3, user4, user5, user6, user7, user8);
-
 document.body.append(list);
 
 console.log(paragraph);
 console.log(paragraph2);
 console.log(myText);
-
 
 myText.innerHTML = "This is a new paragraph using innerHTML with a botton <button>Click</button>";
 myText.style.backgroundColor = "yellow";
