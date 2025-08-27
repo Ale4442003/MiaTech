@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
     tailwind.config = {
-            theme: {
-                extend:{
-                    colors: {
-                        primary: '#a5f3fc',
-                        secondary: '#e9d5ff',
-                        accent: '#fbbf24',
-                        success: '#22c55e',
-                        danger: '#ef4444',
-                    },
-                    spacing: {
-                        '18':'4.5rem',
-                        '22':'5.5rem',
-                    },
-                    fontFamily: {
-                        band:['Montserrat', 'Monospace'],
-                    },
-                }
-            }
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a5f3fc',
+            secondary: '#e9d5ff',
+            accent: '#fbbf24',
+            success: '#22c55e',
+            danger: '#ef4444'
+          },
+          spacing: {
+            '18': '4.5rem',
+            '22': '5.5rem',
+          },
+          fontFamily: {
+            band: ['Montserrat', 'Monospace']
+          }
         }
-    </script>
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer components {
+      .btn {
+        @apply inline-block border border-black px-5 py-2 rounded;
+      }
+      .btn-primary {
+        @apply bg-primary text-black hover:opacity-95 active:border-2;
+      }
+      .btn-danger {
+        @apply bg-danger text-white hover:opacity-80 active:border-2;
+      }
+    }
+  </style>
 </head>
+<body class="font-band">
 
-<body>
-    <div class="bg-primary text-left p-18">
-        Lorem ipsum dolor sit amet.
-    </div>
-    <h1 class="font-band bg-blue-100 text-center text-xl font-bold uppercase border-2 border-danger m-4 leading-relaxed mt-22">
-        Lorem, ipsum dolor.
-    </h1>
-    <p class="text-justify text-danger capitalize font-medium text-sm p-4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ex beatae ducimus nobis facilis reprehenderit.
-    </p>
-    <ul class="font-band list-disc list-inside border-4 border-success p-2 m-4">
-        <li class="text-gray-600 text-base italic p-2">Lorem ipsum dolor sit amet.</li>
-        <li class="text-blue-300 text-base line-through p-2">Lorem ipsum dolor sit.</li>
-        <li class="text-purple-400 text-base underline p-2">Lorem ipsum dolor sit.</li>
-    </ul>
-    <p class="font-band leadind-relaxed text-md bg-danger">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda fugit dolore obcaecati saepe consequatur voluptatibus officiis beatae tenetur odit suscipit. Unde, obcaecati. Aut, totam cum.
-    </p>
+  <div class="bg-primary text-left p-18">
+    Lorem ipsum dolor sit amet.
+  </div>
+
+  <h1 class="font-bold text-blue-100 text-center text-xl uppercase mt-22">
+    Titolo con Tailwind
+  </h1>
+
+  <p class="text-justify text-gray-800 capitalize font-medium text-sm p-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </p>
+
+  <ul class="list-disc list-inside">
+    <li class="text-gray-600 text-base italic p-2">Elemento 1</li>
+    <li class="text-blue-300 text-base line-through p-2">Elemento 2</li>
+    <li class="text-purple-400 text-base underline p-2">Elemento 3</li>
+  </ul>
+
+  <div class="mt-10">
+    <button class="btn btn-primary">Clicca qui</button>
+    <button class="btn btn-danger">Elimina</button>
+  </div>
+
 </body>
-
 </html>
