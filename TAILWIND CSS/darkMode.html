@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwind Dark Mode</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#4f46e5',
-            secondary: '#906bf1',
-          },
-        },
-      },
-    };
-  </script>
-</head>
-<body >
 
-<div class="dark:bg-gray-800 dark:text-white p-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit deserunt molestias harum? Praesentium, quisquam!
-</div>
-  
-  <div class="bg-white text-black p-4">
-    <button id="darkModeToggle" class="border px-4 py-2 rounded bg-blue-500 text-white cursor-pointer dark:bg-yellow-400 dark:text-black">
-    Dark mode: <span id="darkModeStatus">Inactive</span>
-  </button>
-  </div>
-  <button class="bg-violet-600 text-white px-4 py-2 rounded hover:bg-rose-400">click me</button>
-<input type="text" class="border zinc-900 p-2 focus:border-slate-700 focus-ring">scrivi</input>
-<button class="bg-emerald-500 text-gray-900 px-4 py-2 rounded active:bg-indigo-500">clicca</button>
-  <script src="./darkMode.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Dark Mode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#906bf1',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+
+    <div class="dark:bg-gray-800 dark:text-white p-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit deserunt molestias harum? Praesentium,
+        quisquam!
+    </div>
+
+    <div class="bg-white text-black p-4">
+        <button id="darkModeToggle"
+            class="border px-4 py-2 rounded bg-blue-500 text-white cursor-pointer dark:bg-yellow-400 dark:text-black">
+            Dark mode: <span id="darkModeStatus">Inactive</span>
+        </button>
+    </div>
+    <button class="bg-violet-600 text-white px-4 py-2 rounded hover:bg-rose-400">click me</button>
+    <input type="text" class="border zinc-900 p-2 focus:border-slate-700 focus-ring">scrivi</input>
+    <button class="bg-emerald-500 text-gray-900 px-4 py-2 rounded active:bg-indigo-500">clicca</button>
+    <form class="p-4">
+        <input type="text" class="border border-gray-600 px-3 py-2 rounded" />
+        <input type="text" disabled
+            class=" border-black-400 px-3 py-2 rounded  disabled:bg-orange-300 disabled:cursor-not-allowed" />
+        <button class="bg-pink-400 text-white px-4 py-2 rounded">
+            Click
+        </button>
+        <button disabled
+            class="bg-sky-300 text-zinc-900 px-4 py-2 rounded disabled:bg-gray-400 disabled:cursor-not-allowed">
+            Click
+        </button>
+    </form>
+
+
+
+    <script src="./darkMode.js"></script>
 </body>
+
 </html>
