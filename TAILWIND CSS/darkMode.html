@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Dark Mode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4f46e5',
+            secondary: '#906bf1',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body >
+
+<div class="dark:bg-gray-800 dark:text-white p-4">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit deserunt molestias harum? Praesentium, quisquam!
+</div>
+  
+  <div class="p-4">
+    <button id="darkModeToggle" class="border px-4 py-2 cursor-pointer">
+    Dark mode: <span id="darkModeStatus">Inactive</span>
+  </button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
