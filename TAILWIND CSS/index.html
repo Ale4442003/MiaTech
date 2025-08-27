@@ -6,14 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+            theme: {
+                extend:{
+                    colors: {
+                        primary: '#a5f3fc',
+                        secondary: '#e9d5ff',
+                    },
+                    spacing:{
+                        '18':'4.5rem',
+                        '22':'5.5rem',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <div class="bg-purple-300 text-left p-4">
+    <div class="bg-primary text-left p-18">
         Lorem ipsum dolor sit amet.
     </div>
-    <h1 class="bg-blue-100 text-center text-xl font-bold uppercase leading-relaxed p-4">Lorem, ipsum dolor.</h1>
-    <p class="text-justify text-gray-800 capitalize font-medium  text-sm  p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ex beatae ducimus nobis facilis
+    <h1 class="bg-blue-100 text-center text-xl font-bold uppercase leading-relaxed mt-22">Lorem, ipsum dolor.</h1>
+    <p class="text-justify text-gray-800 capitalize font-medium text-sm p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ex beatae ducimus nobis facilis
         reprehenderit.</p>
     <ul class="list-disc list-inside">
         <li class="text-gray-600 text-base italic p-2">Lorem ipsum dolor sit amet.</li>
