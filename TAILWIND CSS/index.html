@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#a5f3fc',
-            secondary: '#e9d5ff',
-            accent: '#fbbf24',
-            success: '#22c55e',
-            danger: '#ef4444'
-          },
-          spacing: {
-            '18': '4.5rem',
-            '22': '5.5rem',
-          },
-          fontFamily: {
-            band: ['Montserrat', 'Monospace']
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a5f3fc',
+                        secondary: '#e9d5ff',
+                        accent: '#fbbf24',
+                        success: '#22c55e',
+                        danger: '#ef4444'
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                    },
+                    fontFamily: {
+                        band: ['Montserrat', 'Monospace']
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <style type="text/tailwindcss">
-    @layer components {
+    <style type="text/tailwindcss">
+        @layer components {
       .btn {
         @apply inline-block border border-black px-5 py-2 rounded;
       }
@@ -50,36 +51,66 @@
       .btn-accent {
       @apply bg-accent text-white hover:opacity-90 active:border-2;
     }
+    .paragraph {
+        @apply text-green-600 text-base;
+    }
+    .card {
+        @apply bg-white border rounded p-4 text-gray-700;
+    }
     }
   </style>
 </head>
+
 <body class="font-band">
 
-  <div class="bg-primary text-left p-18">
-    Lorem ipsum dolor sit amet.
-  </div>
+    <div class="bg-primary text-left p-18">
+        Lorem ipsum dolor sit amet.
+    </div>
+    <h1 class="font-bold text-blue-100 text-center text-xl uppercase mt-22">
+        Titolo con Tailwind
+    </h1>
 
-  <h1 class="font-bold text-blue-100 text-center text-xl uppercase mt-22">
-    Titolo con Tailwind
-  </h1>
+    <h3 class="title">Lorem ipsum dolor sit.</h1>
+        <h3 class="title2">Lorem ipsum dolor sit.</h3>
+        <p class="text-justify text-gray-800 capitalize font-medium text-sm p-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
 
-  <p class="text-justify text-gray-800 capitalize font-medium text-sm p-4">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </p>
+        <ul class="list-disc list-inside">
+            <li class="text-gray-600 text-base italic p-2">Elemento 1</li>
+            <li class="text-blue-300 text-base line-through p-2">Elemento 2</li>
+            <li class="text-purple-400 text-base underline p-2">Elemento 3</li>
+        </ul>
 
-  <ul class="list-disc list-inside">
-    <li class="text-gray-600 text-base italic p-2">Elemento 1</li>
-    <li class="text-blue-300 text-base line-through p-2">Elemento 2</li>
-    <li class="text-purple-400 text-base underline p-2">Elemento 3</li>
-  </ul>
+        <div class="mt-10">
+            <button class="btn btn-primary">Clicca qui</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-danger">Elimina</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-accent">Accent</button>
+        </div>
 
-  <div class="mt-10">
-    <button class="btn btn-primary">Clicca qui</button>
-    <button class="btn btn-secondary">Secondary</button>
-    <button class="btn btn-danger">Elimina</button>
-    <button class="btn btn-success">Success</button>
-    <button class="btn btn-accent">Accent</button>
-  </div>
+        <div class="mt-10 space-y-3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ducimus fuga temporibus enim
+                perspiciatis.</p>
+
+            <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates asperiores non, officia ducimus et
+                repellendus. </p>
+
+            <p class="paragraph" style="color: purple;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam fugiat in qui maxime omnis? Ipsum? </p>
+
+            <div class="card mt-6">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, provident!</p>
+                <p class="text-red-500">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, sit.
+                </p>
+            </div>
+        </div>
+
+
 
 </body>
+
 </html>
