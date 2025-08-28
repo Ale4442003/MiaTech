@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -19,13 +18,8 @@
                         success: '#22c55e',
                         danger: '#ef4444'
                     },
-                    spacing: {
-                        '18': '4.5rem',
-                        '22': '5.5rem',
-                    },
-                    fontFamily: {
-                        band: ['Montserrat', 'Monospace']
-                    }
+                    spacing: { '18': '4.5rem', '22': '5.5rem' },
+                    fontFamily: { band: ['Montserrat', 'Monospace'] }
                 }
             }
         }
@@ -33,98 +27,117 @@
 
     <style type="text/tailwindcss">
         @layer components {
-      .btn {
+
+    .btn {
         @apply inline-block border border-black px-5 py-2 rounded;
-      }
-      .btn-primary {
+    }       
+    
+    .btn-primary {
         @apply bg-primary text-black hover:opacity-95 active:border-2;
-      }
+     }
+
       .btn-secondary {
-      @apply bg-secondary text-black hover:opacity-95 active:border-2;
-    }
-    .btn-success {
-      @apply bg-success text-white hover:opacity-90 active:border-2;
-    }
+        @apply bg-secondary text-black hover:opacity-95 active:border-2;
+     }
+
+      .btn-success {
+        @apply bg-success text-white hover:opacity-90 active:border-2;
+     }
+
       .btn-danger {
         @apply bg-danger text-white hover:opacity-80 active:border-2;
-      }
+     }
+
       .btn-accent {
-      @apply bg-accent text-white hover:opacity-90 active:border-2;
-    }
-    .paragraph {
+        @apply bg-accent text-white hover:opacity-90 active:border-2;
+     }
+
+      .paragraph {
         @apply text-green-600 text-base;
-    }
-    .card {
+     }
+
+      .card {
         @apply bg-white border rounded p-4 text-gray-700;
-    }
+     }
     }
   </style>
 </head>
 
 <body class="font-band">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-primary text-left p-18">
-            Lorem ipsum dolor sit amet.
-        </div>
+        <div class="bg-primary text-left p-18">Lorem ipsum dolor sit amet.</div>
+
         <h1 class="font-bold text-blue-100 text-center text-2xl md:text-4xl lg:text-5xl uppercase mt-22">
             Titolo con Tailwind
         </h1>
 
-        <h3 class="title">Lorem ipsum dolor sit.</h1>
-            <h3 class="title2">Lorem ipsum dolor sit.</h3>
-            <p
-                class="text-justify text-gray-800 capitalize font-medium text-sm md:text-base lg:text-lg md:leading-relaxed p-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+        <h3 class="title">Lorem ipsum dolor sit.</h3>
+        <h3 class="title2">Lorem ipsum dolor sit.</h3>
 
-            <ul class="list-disc list-inside">
-                <li class="text-gray-600 text-base italic p-2">Elemento 1</li>
-                <li class="text-blue-300 text-base line-through p-2">Elemento 2</li>
-                <li class="text-purple-400 text-base underline p-2">Elemento 3</li>
+        <p
+            class="text-justify text-gray-800 capitalize font-medium text-sm md:text-base lg:text-lg md:leading-relaxed p-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <ul class="list-disc list-inside">
+            <li class="text-gray-600 text-base italic p-2">Elemento 1</li>
+            <li class="text-blue-300 text-base line-through p-2">Elemento 2</li>
+            <li class="text-purple-400 text-base underline p-2">Elemento 3</li>
+        </ul>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <button class="btn btn-primary">Clicca qui</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-danger">Elimina</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-accent">Accent</button>
+        </div>
+
+        <div class="mt-10 space-y-3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ducimus fuga temporibus enim
+                perspiciatis.</p>
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates asperiores non,
+                officia ducimus et repellendus.</p>
+            <p class="paragraph" style="color: purple;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                fugiat in qui maxime omnis? Ipsum?</p>
+            <div class="card mt-6">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, provident!</p>
+                <p class="text-red-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, sit.</p>
+            </div>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-blue-500 p-4">Box 1</div>
+            <div class="bg-green-500 p-4">Box 2</div>
+            <div class="bg-red-500 p-4">Box 3</div>
+        </div>
+
+        <nav class="mt-8">
+            <button class="btn btn-primary md:hidden" aria-label="Apri menu">☰ Menu</button>
+            <ul class="hidden md:flex gap-4">
+                <li><a href="#" class="underline">Home</a></li>
+                <li><a href="#" class="underline">About</a></li>
+                <li><a href="#" class="underline">Contact</a></li>
             </ul>
+        </nav>
 
-            <div class="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button class="btn btn-primary">Clicca qui</button>
-                <button class="btn btn-secondary">Secondary</button>
-                <button class="btn btn-danger">Elimina</button>
-                <button class="btn btn-success">Success</button>
-                <button class="btn btn-accent">Accent</button>
-            </div>
+        <div class="mt-6 p-3 rounded bg-accent/20 text-gray-800 md:hidden">
+            Questo messaggio è visibile solo su schermi piccoli (mobile).
+        </div>
 
+        <div class="mt-6 p-3 rounded bg-secondary/40 text-gray-800 hidden md:block lg:hidden">
+            Visibile solo su md (tablet), nascosto su mobile e su large+.
+        </div>
 
-            <div class="mt-10 space-y-3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ducimus fuga temporibus enim
-                    perspiciatis.</p>
-
-                <p class="paragraph">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates asperiores non, officia ducimus
-                    et
-                    repellendus. </p>
-
-                <p class="paragraph" style="color: purple;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam fugiat in qui maxime omnis? Ipsum?
-                </p>
-
-                <div class="card mt-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, provident!</p>
-                    <p class="text-red-500">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, sit.
-                    </p>
-                </div>
-            </div>
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-blue-500 p-4">Box 1</div>
-                <div class="bg-green-500 p-4">Box 2</div>
-                <div class="bg-red-500 p-4">Box 3</div>
-            </div>
+        <div class="mt-6 p-3 rounded bg-success/20 text-gray-800 hidden lg:block">
+            Visibile solo su schermi grandi (lg+).
+        </div>
     </div>
 
     <div class="flex justify-center items-center h-screen">
         <div class="bg-primary text-left p-6 md:p-10 lg:p-14">
             Lorem ipsum dolor sit amet.
         </div>
-    </div>
-
     </div>
 </body>
 
