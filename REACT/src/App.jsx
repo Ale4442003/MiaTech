@@ -1,8 +1,6 @@
-import { Component } from "react";
+import { HelloWorld } from "./Helloworld";
 
 class App extends Component {
-
-
 
   render() {
     return (
@@ -12,3 +10,5 @@ class App extends Component {
     )
   }
 }
+
+export default App
