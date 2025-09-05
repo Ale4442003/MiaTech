@@ -1,14 +1,14 @@
-import { HelloWorld } from "./Helloworld";
+import { Component } from "react";     
+import HelloWorld from "./Helloworld.jsx";
 
 class App extends Component {
-
   render() {
     return (
       <>
-        <p> HelloWorld </p>
+        <HelloWorld />
       </>
-    )
+    );
   }
 }
 
-export default App
+export default App;
