@@ -15,12 +15,15 @@
 
 import Counter from "./Counter";
 import TextInput from "./TextInput";
+import LoginForm from "./LoginForm";
 
 export default function App() {
   return (
   <>
     <Counter />
     <TextInput />
+    <LoginForm />
   </>
   );
 }
+
