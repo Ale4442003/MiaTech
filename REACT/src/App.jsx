@@ -14,9 +14,13 @@
 // export default App;
 
 import Counter from "./Counter";
+import TextInput from "./TextInput";
 
-function App() {
-  return <Counter />;
+export default function App() {
+  return (
+  <>
+    <Counter />
+    <TextInput />
+  </>
+  );
 }
-
-export default App;
