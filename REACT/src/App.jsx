@@ -17,6 +17,7 @@ import Counter from "./Counter";
 import TextInput from "./TextInput";
 import LoginForm from "./LoginForm";
 import UncontrolledInput from "./UncontrolledInput";
+import UncontrolledInputP2 from "./UncontrolledInputP2";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
     <TextInput />
     <LoginForm />
     <UncontrolledInput />
+    <UncontrolledInputP2 />
   </>
   );
 }

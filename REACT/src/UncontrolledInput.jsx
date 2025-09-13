@@ -12,9 +12,9 @@ export default function UncontrolledInput() {
       <input
         type="text"
         ref={inputRef} 
-        placeholder="Scrivi qualcosa..."
+        placeholder="write"
       />
-      <button onClick={showValue}>Mostra valore</button>
+      <button onClick={showValue}>Show value</button>
     </div>
   );
 }
