@@ -16,6 +16,7 @@
 import Counter from "./Counter";
 import TextInput from "./TextInput";
 import LoginForm from "./LoginForm";
+import UncontrolledInput from "./UncontrolledInput";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
     <Counter />
     <TextInput />
     <LoginForm />
+    <UncontrolledInput />
   </>
   );
 }
