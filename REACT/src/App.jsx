@@ -20,6 +20,7 @@ import UncontrolledInput from "./UncontrolledInput";
 import UncontrolledInputP2 from "./UncontrolledInputP2";
 import UncontrolledInputP3 from "./UncontrolledInputP3";
 import ItemList from "./ItemList";
+import CityList from "./CityList";
 
 export default function App() {
 
@@ -33,6 +34,7 @@ export default function App() {
     <UncontrolledInputP2 />
     <UncontrolledInputP3 />
     <ItemList items={cities} />
+     <CityList />  
   </>
   );
 }
