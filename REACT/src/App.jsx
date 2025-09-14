@@ -21,20 +21,45 @@ import UncontrolledInputP2 from "./UncontrolledInputP2";
 import UncontrolledInputP3 from "./UncontrolledInputP3";
 import ItemList from "./ItemList";
 import CityList from "./CityList";
+import Card from "./Card";
 
 export default function App() {
 
   const cities = ["Bergamo", "Milano", "Roma"];
   return (
-  <>
-    <Counter />
-    <TextInput />
-    <LoginForm />
-    <UncontrolledInput />
-    <UncontrolledInputP2 />
-    <UncontrolledInputP3 />
-    <ItemList items={cities} />
-     <CityList />  
+    <>
+      <Counter />
+      <TextInput />
+      <LoginForm />
+      <UncontrolledInput />
+      <UncontrolledInputP2 />
+      <UncontrolledInputP3 />
+      <ItemList items={cities} />
+      <CityList />
+      <Card>
+        <h2>Title card</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </Card>
+
+      <Card>
+        <button>Click me</button>
+      </Card> 
+       <Card>
+        <h2>Section Counter</h2>
+        <Counter />
+      </Card>
+
+      <Card>
+        <h2>Section Form</h2>
+        <TextInput />
+        <LoginForm />
+      </Card>
+
+      <Card>
+        <h2>Section Lists</h2>
+        <ItemList items={cities} />
+        <CityList />
+      </Card>
   </>
   );
 }
