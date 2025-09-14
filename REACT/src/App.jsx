@@ -19,8 +19,11 @@ import LoginForm from "./LoginForm";
 import UncontrolledInput from "./UncontrolledInput";
 import UncontrolledInputP2 from "./UncontrolledInputP2";
 import UncontrolledInputP3 from "./UncontrolledInputP3";
+import ItemList from "./ItemList";
 
 export default function App() {
+
+  const cities = ["Bergamo", "Milano", "Roma"];
   return (
   <>
     <Counter />
@@ -29,6 +32,7 @@ export default function App() {
     <UncontrolledInput />
     <UncontrolledInputP2 />
     <UncontrolledInputP3 />
+    <ItemList items={cities} />
   </>
   );
 }
