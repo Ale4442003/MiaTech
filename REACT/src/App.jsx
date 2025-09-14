@@ -18,6 +18,7 @@ import TextInput from "./TextInput";
 import LoginForm from "./LoginForm";
 import UncontrolledInput from "./UncontrolledInput";
 import UncontrolledInputP2 from "./UncontrolledInputP2";
+import UncontrolledInputP3 from "./UncontrolledInputP3";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
     <LoginForm />
     <UncontrolledInput />
     <UncontrolledInputP2 />
+    <UncontrolledInputP3 />
   </>
   );
 }
