@@ -1,43 +1,51 @@
-import { useState, useCallback, useMemo} from "react";
+import { useState, useCallback, useMemo, useRef, useEffect } from "react";
 import useFetch from "./hooks/useFetch";
 import useFilteredTodos from "./hooks/useFilteredTodos";
 
 export default function TodoList() {
-  // QUI il fix: [] e non "l"
-  const { data = [], loading, error } =
-    useFetch("https://jsonplaceholder.typicode.com/todos");
+    // QUI il fix: [] e non "l"
+    const { data = [], loading, error } =
+        useFetch("https://jsonplaceholder.typicode.com/todos");
 
-  const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = useCallback((e) => {
-  setSearchTerm(e.target.value);
-}, []); 
-
-
-  const filteredTodos = useMemo(() => {
-  return useFilteredTodos(data, searchTerm);
-}, [data, searchTerm]);
+    const handleSearchChange = useCallback((e) => {
+        setSearchTerm(e.target.value);
+    }, []);
 
 
-  if (loading) return <p>Loading...</p>;
-  if (error)   return <p>Error: {error}</p>;
+    const filteredTodos = useMemo(() => {
+        return useFilteredTodos(data, searchTerm);
+    }, [data, searchTerm]);
 
-  return (
-    <>
-      <h2>Section Todo List</h2>
+    const inputRef = useRef(null);
 
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleSearchChange}
-        placeholder="Search"
-      />
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, []);
 
-      <ul>
-        {filteredTodos.slice(0, 10).map((t) => (
-          <li key={t.id}>{t.title}</li>
-        ))}
-      </ul>
-    </>
-  );
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
+
+    return (
+        <>
+            <h2>Section Todo List</h2>
+
+            <input
+                type="text"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                placeholder="Search"
+            />
+
+            <ul>
+                {filteredTodos.slice(0, 10).map((t) => (
+                    <li key={t.id}>{t.title}</li>
+                ))}
+            </ul>
+        </>
+    );
 }
