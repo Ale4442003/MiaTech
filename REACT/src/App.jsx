@@ -23,13 +23,14 @@ import ItemList from "./ItemList";
 import CityList from "./CityList";
 import Card from "./Card";
 import useFetch from "./hooks/useFetch";
+import TodoList from "./TodoList";
 
 
 export default function App() {
 
   const cities = ["Bergamo", "Milano", "Roma"];
   const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
-   if (error) {
+  if (error) {
     return (
       <p>Error: {error}</p>
     );
@@ -55,11 +56,10 @@ export default function App() {
         <h2>Title card</h2>
         <p>Lorem ipsum dolor sit amet.</p>
       </Card>
-
       <Card>
         <button>Click me</button>
       </Card>
-      <Card>
+      <Card>+
         <h2>Section Counter</h2>
         <Counter />
       </Card>
@@ -75,8 +75,12 @@ export default function App() {
         <CityList />
       </Card>
       <pre>
-      {JSON.stringify(data, null, 2)}
-    </pre>
+        {JSON.stringify(data, null, 2)}
+      </pre>
+      <Card>
+        <h2>Section Todo List</h2>
+        <TodoList />
+      </Card>
     </>
   );
 }
