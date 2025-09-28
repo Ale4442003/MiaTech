@@ -1,4 +1,4 @@
-import { useState, useCallback} from "react";
+import { useState, useCallback, useMemo} from "react";
 import useFetch from "./hooks/useFetch";
 import useFilteredTodos from "./hooks/useFilteredTodos";
 
@@ -14,7 +14,10 @@ export default function TodoList() {
 }, []); 
 
 
-  const filteredTodos = useFilteredTodos(data, searchTerm);
+  const filteredTodos = useMemo(() => {
+  return useFilteredTodos(data, searchTerm);
+}, [data, searchTerm]);
+
 
   if (loading) return <p>Loading...</p>;
   if (error)   return <p>Error: {error}</p>;
