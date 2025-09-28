@@ -9,8 +9,6 @@ export default function useFilteredTodos(todos, searchTerm) {
 
     const out = list.filter((todo) =>
       todo.title.toLowerCase().includes(term)
-      // se vuoi anche userId === 7, aggiungi:
-      // && todo.userId === 7
     );
 
     setFiltered(out);

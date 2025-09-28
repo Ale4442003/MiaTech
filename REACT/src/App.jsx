@@ -24,57 +24,50 @@ import CityList from "./CityList";
 import Card from "./Card";
 import TodoList from "./TodoList";
 
-
-export default function App() {
-
+const App = () => {
   const cities = ["Bergamo", "Milano", "Roma"];
-  // const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
-  // if (error) {
-  //   return (
-  //     <p>Error: {error}</p>
-  //   );
-  // }
-
-  // if (loading) {
-  //   return (
-  //     <p>Loading...</p>
-  //   );
-  // }
 
   return (
-    <>
-      <Counter />
-      <TextInput />
-      <LoginForm />
-      <UncontrolledInput />
-      <UncontrolledInputP2 />
-      <UncontrolledInputP3 />
-      <ItemList items={cities} />
-      <CityList />
-      <Card>
-        <h2>Title card</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </Card>
-      <Card>
-        <button>Click me</button>
-      </Card>
-      <Card>+
-        <h2>Section Counter</h2>
+    
+      <>
         <Counter />
-      </Card>
-
-      <Card>
-        <h2>Section Form</h2>
         <TextInput />
         <LoginForm />
-      </Card>
-
-      <Card>
-        <h2>Section Lists</h2>
+        <UncontrolledInput />
+        <UncontrolledInputP2 />
+        <UncontrolledInputP3 />
+        <ItemList items={cities} />
         <CityList />
-      </Card>
-    
-      <TodoList />
-    </>
+
+        <Card>
+          <h2>Title card</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </Card>
+
+        <Card>
+          <button>Click me</button>
+        </Card>
+
+        <Card>
+          <h2>Section Counter</h2>
+          <Counter />
+        </Card>
+
+        <Card>
+          <h2>Section Form</h2>
+          <TextInput />
+          <LoginForm />
+        </Card>
+
+        <Card>
+          <h2>Section Lists</h2>
+          <CityList />
+        </Card>
+
+        <TodoList />
+      </>
+
   );
 };
+
+export default App;
