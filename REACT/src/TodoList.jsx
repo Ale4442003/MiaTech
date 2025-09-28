@@ -1,21 +1,35 @@
+import { useState } from "react";
 import useFetch from "./hooks/useFetch";
+import useFilteredTodos from "./hooks/useFilteredTodos";
 
-const TodoList = () => {
-    const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
+export default function TodoList() {
+  // QUI il fix: [] e non "l"
+  const { data = [], loading, error } =
+    useFetch("https://jsonplaceholder.typicode.com/todos");
 
-    return (
-        <>
-            {loading && <p>Loading</p>}
-            {error && <p>Error</p>}
-            {data && (
-                <ul>
-                    {data.slice(0, 10).map(todo => (
-                        <li key={todo.id}>{todo.title}</li>
-                    ))}
-                </ul>
-            )}
-        </>
-    );
-};
+  const [searchTerm, setSearchTerm] = useState("");
 
-export default TodoList;
+  const filteredTodos = useFilteredTodos(data, searchTerm);
+
+  if (loading) return <p>Loading...</p>;
+  if (error)   return <p>Error: {error}</p>;
+
+  return (
+    <>
+      <h2>Section Todo List</h2>
+
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search"
+      />
+
+      <ul>
+        {filteredTodos.slice(0, 10).map((t) => (
+          <li key={t.id}>{t.title}</li>
+        ))}
+      </ul>
+    </>
+  );
+}

@@ -22,25 +22,24 @@ import UncontrolledInputP3 from "./UncontrolledInputP3";
 import ItemList from "./ItemList";
 import CityList from "./CityList";
 import Card from "./Card";
-import useFetch from "./hooks/useFetch";
 import TodoList from "./TodoList";
 
 
 export default function App() {
 
   const cities = ["Bergamo", "Milano", "Roma"];
-  const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
-  if (error) {
-    return (
-      <p>Error: {error}</p>
-    );
-  }
+  // const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
+  // if (error) {
+  //   return (
+  //     <p>Error: {error}</p>
+  //   );
+  // }
 
-  if (loading) {
-    return (
-      <p>Loading...</p>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <p>Loading...</p>
+  //   );
+  // }
 
   return (
     <>
@@ -74,15 +73,8 @@ export default function App() {
         <h2>Section Lists</h2>
         <CityList />
       </Card>
-      <pre>
-        {JSON.stringify(data, null, 2)}
-      </pre>
-      <Card>
-        <h2>Section Todo List</h2>
-        <TodoList />
-      </Card>
+    
+      <TodoList />
     </>
   );
-}
-
-
+};

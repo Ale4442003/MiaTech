@@ -1,12 +1,20 @@
 import { useState, useEffect } from "react";
 
-const useFilteredTodos = (todos, searchTerm ) => {
-    const [filteredTodos, setFilteredTodos] = useState ([]);
+export default function useFilteredTodos(todos, searchTerm) {
+  const [filtered, setFiltered] = useState([]);
 
-    useEffect(() => {
-        const filtered = todos.filter(todo => todo.userId === 7);
-        setFilteredTodos(filtered);
-    }, [todos, searchTerm]);
-    return filteredTodos;
-};
-export default useFilteredTodos;
+  useEffect(() => {
+    const list = Array.isArray(todos) ? todos : [];
+    const term = (searchTerm || "").toLowerCase();
+
+    const out = list.filter((todo) =>
+      todo.title.toLowerCase().includes(term)
+      // se vuoi anche userId === 7, aggiungi:
+      // && todo.userId === 7
+    );
+
+    setFiltered(out);
+  }, [todos, searchTerm]);
+
+  return filtered;
+}
