@@ -25,11 +25,11 @@ import Card from "./Card";
 import TodoList from "./TodoList";
 import { TodosProvider } from "./providers/TodosContext";
 
-import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom"
+
 import Home from "./pages/Home";
 import About from "./pages/About";
-
-import { Route, Routes } from "react-router-dom"
+import PublicLayout from "./layouts/PublicLayout";
 
 const App = () => {
   const cities = ["Bergamo", "Milano", "Roma"];
@@ -73,12 +73,14 @@ const App = () => {
 
       <TodosProvider>
         <TodoList />
-        
-        <Navbar />
+
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+           <Route path="/" element={<PublicLayout />}>
+            <Route path="" element={<Home />} />
+            <Route path="about" element={<About />} />
+            </Route>
         </Routes>
+
       </TodosProvider>
     </>
 

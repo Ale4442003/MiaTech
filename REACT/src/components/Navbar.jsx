@@ -10,7 +10,7 @@ const Navbar = () => {
                 <Link to="/about">About</Link>
             </div>
         </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
