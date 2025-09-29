@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import useFilteredTodos from "./hooks/useFilteredTodos";
 import { useTodos } from "./providers/TodosContext";
+import { Link } from "react-router-dom";
 
 const TodoList = () => {
   const { todos, loading, error } = useTodos();
@@ -37,9 +38,12 @@ const TodoList = () => {
 
       <ul>
         {filteredTodos.slice(0, 10).map((t) => (
-          <li key={t.id}>{t.title}</li>
+          <li key={t.id}>
+            <Link to={`/todo/${t.id}`}>{t.title}</Link>
+          </li>
         ))}
       </ul>
+
     </>
   );
 };
