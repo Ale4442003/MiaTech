@@ -2,11 +2,13 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import useFilteredTodos from "./hooks/useFilteredTodos";
 import { useTodos } from "./providers/TodosContext";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const TodoList = () => {
   const { todos, loading, error } = useTodos();
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("q") ?? "");
 
   const inputRef = useRef(null);
 
@@ -14,10 +16,12 @@ const TodoList = () => {
     inputRef.current?.focus();
   }, []);
 
-  const handleSearchChange = useCallback(
-    (e) => setSearchTerm(e.target.value),
-    []
-  );
+  const handleSearchChange = useCallback((e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    setSearchParams(value ? { q: value } : {});
+  }, [setSearchParams]);
+
 
   const filteredTodos = useFilteredTodos(todos, searchTerm);
 
