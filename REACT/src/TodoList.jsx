@@ -1,11 +1,17 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import useFilteredTodos from "./hooks/useFilteredTodos";
-import { useTodos } from "./providers/TodosContext";
+//import { useTodos } from "./providers/TodosContext";
+import { useSelector } from 'react-redux'
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
+
 const TodoList = () => {
-  const { todos, loading, error } = useTodos();
+  //const { todos, loading, error } = useTodos();
+  const todos = useSelector((state) => state.todos.todos)
+  const loading = useSelector((state) => state.todos.loading)
+  const error = useSelector((state) => state.todos.error)
+
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(searchParams.get("q") ?? "");
