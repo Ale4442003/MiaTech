@@ -11,3 +11,5 @@ const todo = createSlice({
         //esempio action(state, action)
     }
 })
+
+export default todo.reducer

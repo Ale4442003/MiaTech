@@ -1,13 +1,14 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import useFilteredTodos from "./hooks/useFilteredTodos";
 //import { useTodos } from "./providers/TodosContext";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'//prendere i dati 
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
 
 const TodoList = () => {
   //const { todos, loading, error } = useTodos();
+  //entra nella chiave todos(store.js) e poi prendi la proprietà todos(slice)
   const todos = useSelector((state) => state.todos.todos)
   const loading = useSelector((state) => state.todos.loading)
   const error = useSelector((state) => state.todos.error)
