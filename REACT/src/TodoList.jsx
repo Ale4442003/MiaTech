@@ -1,12 +1,16 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import useFilteredTodos from "./hooks/useFilteredTodos";
 //import { useTodos } from "./providers/TodosContext";
-import { useSelector } from 'react-redux'//prendere i dati 
+import { useSelector, useDispatch } from 'react-redux'//prendere i dati 
+//import { completed } from './store/features/todoSlice';
+import { toggleComplete } from './store/features/todoSlice';
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
 
 const TodoList = () => {
+
+  const dispatch = useDispatch();
   //const { todos, loading, error } = useTodos();
   //entra nella chiave todos(store.js) e poi prendi la proprietà todos(slice)
   const todos = useSelector((state) => state.todos.todos)
@@ -47,16 +51,21 @@ const TodoList = () => {
         placeholder="Search"
       />
 
-      <ul>
-        {filteredTodos.slice(0, 10).map((t) => (
-          <li key={t.id}>
-            <Link to={`/todo/${t.id}`}>{t.title}</Link>
-          </li>
-        ))}
-      </ul>
+   {filteredTodos.map(item => (
+  <p key={item.id}>
+    <Link to={`/todo/${item.id}`}>{item.title}</Link>{" "}
+    {item.completed.toString()}{" "}
+    <button onClick={() => dispatch(toggleComplete(item.id))}>
+      Toggle
+    </button>
+  </p>
+))}
 
     </>
   );
+
 };
 
 export default TodoList;
+
+//</><button onClick={() => dispatch(completed(item.id))}>Toggle</button>

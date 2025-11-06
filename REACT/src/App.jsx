@@ -23,8 +23,8 @@ import ItemList from "./ItemList";
 import CityList from "./CityList";
 import Card from "./Card";
 import TodoList from "./TodoList";
-import { TodosProvider } from "./providers/TodosContext";
 
+import { TodosProvider } from "./providers/TodosContext";
 import { Route, Routes } from "react-router-dom"
 
 import Home from "./pages/Home";
@@ -77,11 +77,11 @@ const App = () => {
         <TodoList />
 
         <Routes>
-           <Route path="/" element={<PublicLayout />}>
-            <Route path="" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="todo/:id" element={<TodoDetail />} />
-            </Route>
+          <Route element={<PublicLayout />}>
+            <Route path="/" element={<TodoList />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/todo/:id" element={<TodoDetail />} />
+          </Route>
         </Routes>
 
       </TodosProvider>
