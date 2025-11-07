@@ -1,5 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const myName = 'Ale';
+const myName = 'Alessandra';
 console.log(myName);
 //# sourceMappingURL=index.js.map
