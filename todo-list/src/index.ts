@@ -8,6 +8,7 @@ const myTodo: Todo = {
     completed: false,
 };
 
+//lista di tutti i todo
 const todos: Todo[] = [];
 
 //const nomeFunzione = (parametro :Tipo (cosa entra)): cosa esce => { funzioni const}
@@ -21,4 +22,20 @@ const addTodo = (title:string): Todo => {
     };
     todos.push(newTodo);
     return(newTodo);
+}
+
+const assignTodoToUser = (todoId: number, userId: number) => {
+    //cerco nell'array(todos) il todo che ha id uguale a quello passato alla funzione
+    const searchTodo = todos.find (todo => todo.id === todoId);
+
+    //se non lo trovo → messaggio in console
+    if(!searchTodo) {
+        console.log("todo non trovato");
+        return;
+    }
+
+    //se esiste
+    searchTodo.userId =userId;
+
+    return searchTodo;
 }
