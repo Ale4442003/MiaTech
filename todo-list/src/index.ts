@@ -45,3 +45,8 @@ const getUserTodos = (userId: number): Todo [] => {
     const searchAllTodo = todos.filter(todo => todo.userId === userId);
     return searchAllTodo;
 }
+
+//è una funzione che interrompe l'esecuzione e non restituirà mai niente
+const throwError = (message?:string): never => {
+    throw new Error (message)
+}
