@@ -39,3 +39,9 @@ const assignTodoToUser = (todoId: number, userId: number) => {
 
     return searchTodo;
 }
+
+const getUserTodos = (userId: number): Todo [] => {
+    //dammi solo quelli che appartengono all'utente con questo userId
+    const searchAllTodo = todos.filter(todo => todo.userId === userId);
+    return searchAllTodo;
+}
