@@ -1,6 +1,6 @@
 // const myName: string = 'Ale'; 
 // console.log(myName);
-import { Todo } from "./types";
+import { Todo, TodoWithMetadata } from "./types";
 
 const myTodo: Todo = {
     id: 1,
@@ -13,9 +13,9 @@ const todos: Todo[] = [];
 
 //const nomeFunzione = (parametro :Tipo (cosa entra)): cosa esce => { funzioni const}
 //:Todo → deve restituire un oggetto che rispetta la forma dell'interface Todo
-const addTodo = (title: string, metadata?: any): Todo => {
+const addTodo = (title: string, metadata?: any): TodoWithMetadata => {
     //newTodo deve rispettare l'interfaccia Todo
-    const newTodo: Todo = {
+    const newTodo: TodoWithMetadata = {
         id: todos.length + 1, //id sempre diverso
         title: title,
         completed: false,
