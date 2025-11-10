@@ -13,12 +13,13 @@ const todos: Todo[] = [];
 
 //const nomeFunzione = (parametro :Tipo (cosa entra)): cosa esce => { funzioni const}
 //:Todo → deve restituire un oggetto che rispetta la forma dell'interface Todo
-const addTodo = (title: string): Todo => {
+const addTodo = (title: string, metadata?: any): Todo => {
     //newTodo deve rispettare l'interfaccia Todo
     const newTodo: Todo = {
         id: todos.length + 1, //id sempre diverso
         title: title,
         completed: false,
+        metadata: metadata,// → contenitore jolly
     };
     todos.push(newTodo);
     return (newTodo);
