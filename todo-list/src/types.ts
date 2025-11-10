@@ -15,5 +15,25 @@ export interface User {
 }
 
 export interface TodoWithMetadata extends Todo{
-    metadata?: any,
+    metadata?: string | object,
 }
+
+//Aggiorna la funzione addTodo per accettare 
+// un parametro opzionale 
+//metadata di tipo string | object
+
+// interface UserInfo {
+//     id: string,
+//     name: string,
+//     age: number,
+// }
+
+// interface UserAuth extends UserInfo {
+//     isAuth: boolean,
+// }
+
+// type User =UserInfo & UserAuth
+
+// const user: User = {
+
+// }
