@@ -1,6 +1,7 @@
 // const myName: string = 'Ale'; 
 // console.log(myName);
-import { Todo, TodoStatus, TodoWithMetadata, User } from "./types";
+import { Todo, TodoStatus, TodoWithMetadata } from "./types";
+import { User } from "./User";
 
 const myTodo: Todo = {
     id: 1,
@@ -96,3 +97,9 @@ const updateTodoStatus = (todoId: number, newStatus: TodoStatus): Todo | undefin
     searchTodoId.status = newStatus;
     return searchTodoId;
 };
+
+const user1 = new User("1", "Alessandra", "alessandrag408@gmail.com");
+const user2 = new User("2", "Marco", "marco@example.com");
+
+user1.addTodo(myTodo);
+console.log(user1.todos);
