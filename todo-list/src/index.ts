@@ -6,6 +6,7 @@ const myTodo: Todo = {
     id: 1,
     title: "Study Typescript",
     completed: false,
+    status: TodoStatus.Pending,
 };
 
 //lista di tutti i todo
@@ -84,4 +85,14 @@ const getTodoSummary = (todo: Todo): [string, boolean] => {
 
 const createProject = (users: User[], todos: Todo[]) => {
     return { users, todos };
+};
+
+const updateTodoStatus = (todoId: number, newStatus: TodoStatus): Todo | undefined => {
+    const searchTodoId = todos.find(todo => todo.id === todoId);
+    if(!searchTodoId) {
+        console.log("Todo non trovato")
+        return;
+    }
+    searchTodoId.status = newStatus;
+    return searchTodoId;
 };
