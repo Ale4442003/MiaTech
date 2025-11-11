@@ -1,6 +1,6 @@
 // const myName: string = 'Ale'; 
 // console.log(myName);
-import { PartialTodo, Todo, TodoStatus, TodoWithMetadata } from "./types";
+import { PartialTodo, Todo, TodoRecord, TodoStatus, TodoWithMetadata } from "./types";
 import { User } from "./User";
 import { filterTodos } from "./utils";
 
@@ -127,3 +127,12 @@ const updatePartialTodo = (todoId: number, changes: PartialTodo): Todo | undefin
   return todo;
 };
 
+const convertArrayToRecord = (todosArray: Todo[]): TodoRecord => {
+  const record: TodoRecord = {};
+
+  todosArray.forEach(todo => {
+    record[todo.id] = todo;
+  });
+
+  return record;
+};
