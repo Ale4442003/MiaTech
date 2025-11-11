@@ -1,6 +1,6 @@
 // const myName: string = 'Ale'; 
 // console.log(myName);
-import { Todo, TodoStatus, TodoWithMetadata } from "./types";
+import { PartialTodo, Todo, TodoStatus, TodoWithMetadata } from "./types";
 import { User } from "./User";
 import { filterTodos } from "./utils";
 
@@ -107,3 +107,23 @@ console.log(user1.todos);
 
 const todosToComplete = filterTodos(todos, (todo) => todo.status === TodoStatus.Pending);
 console.log(todosToComplete);
+
+const updatePartialTodo = (todoId: number, changes: PartialTodo): Todo | undefined => {
+  const todo = todos.find(t => t.id === todoId);
+
+  if (!todo) {
+    console.log("Todo non trovato");
+    return;
+  }
+
+  for (const key in changes) {
+    const k = key as keyof PartialTodo;
+    const value = changes[k];
+    if (value !== undefined) {
+      (todo as any)[k] = value;
+    }
+  }
+
+  return todo;
+};
+

@@ -31,6 +31,10 @@ export enum TodoStatus {
     Completed,
 }
 
+export type PartialTodo = {
+  [K in keyof Todo]?: Todo[K]
+};
+
 // /* Utiliti */
 
 //   interface UserInfo {
