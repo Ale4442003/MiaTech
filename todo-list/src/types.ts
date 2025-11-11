@@ -108,5 +108,34 @@ export enum TodoStatus {
 // const res: MixedResponse = MixedResponse.yes;
 // const res: MixedResponse = MixedResponse.no;
 
+// class Persona {
+//     constructor (nome, età) {
+//         this.nome = nome;
+//         this.età = età;
 
+//     }
+//     saluta() {
+//         return "ciao" + this.nome;
+//     }
+// }
 
+// class Persona {
+//     nome:string;
+//     età: number;
+//     constructor(pubblic nome: string, pubblic età: number) {}
+//     constructor (nome:string, età:number){
+//         this.nome = nome;
+//         this.età = età;
+//     }
+//     saluta(): string {
+//         return "ciao" + this.nome;
+//     }
+// }
+
+//Questi tre sono detti modificatori di accesso,
+// e servono a dire chi può vedere o usare una proprietà o un metodo.
+//- pubblic: è visibile ovunque 
+//- private: è visibile solo dentro la classe stessa,
+//  fuori non puoi toccarlo
+//- protected: è visibile nella classe e nelle classi che la estendono,
+//  ma non fuori
