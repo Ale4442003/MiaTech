@@ -49,4 +49,3 @@ const parseInput = (input) => {
     }
     return throwError("Errore");
 };
-//# sourceMappingURL=index.js.map

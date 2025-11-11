@@ -18,22 +18,51 @@ export interface TodoWithMetadata extends Todo{
     metadata?: string | object,
 }
 
-//Aggiorna la funzione addTodo per accettare 
-// un parametro opzionale 
-//metadata di tipo string | object
+/* Utiliti */
 
-// interface UserInfo {
-//     id: string,
-//     name: string,
-//     age: number,
-// }
+ interface UserInfo {
+     id: string,
+     name: string,
+     age: number,
+ }
 
-// interface UserAuth extends UserInfo {
-//     isAuth: boolean,
-// }
+ interface UserAuth extends UserInfo {
+     isAuth: boolean,
+ }
 
-// type User =UserInfo & UserAuth
+ type User =UserInfo & UserAuth
 
-// const user: User = {
+ //Prendi dal tipo di dato User soltanto gli id
+ // Pick → seleziona qualcosa dal tipo di dato che ho specificato tra le <...>
+ const user: Pick<User, "id" | "name">= {
+    id:"",
+    name: "",
+}
 
-// }
+// è il contrario di Pick → prendi tutto tranne name e isAuth
+const user1: Omit<User, "name" | "isAuth"> = {
+    id: "",
+    age: 0
+}
+
+//readonlyUser → di sola lettura, non permette di modificare un elemento
+const readonlyUser: Readonly<User> = {
+    id:"",
+    name: "",
+    age: 0,
+    isAuth: true
+}
+
+//Partial → rende tutte le proprietà di tipo opzionale
+const user2: Partial<User> = {
+    id: "",
+} // → per creare un oggetto 
+
+//Required → rende tutti gli elementi obbligatori (opposto di partial)
+// anche se ipotizzando ho alcuni? , verrano cmq gestiti come obbligatori
+const user3: Required<User> = {
+    id: "",
+    name: "",
+    age:0,
+    isAuth: false
+}

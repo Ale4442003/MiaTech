@@ -54,13 +54,25 @@ const throwError = (message?: string): never => {
 }
 
 const parseInput = (input: unknown): string => {
-  if (typeof input === "string") {
-    return input;
-  }
+    if (typeof input === "string") {
+        return input;
+    }
 
-  if (typeof input === "number") {
-    return input.toString();
-  }
+    if (typeof input === "number") {
+        return input.toString();
+    }
 
-  return throwError("Errore");
+    return throwError("Errore");
 };
+
+const updateTodo = (id: number, changes: Partial<Todo>): Todo | undefined => {
+    const newUpdate = todos.find(todo => todo.id === id);
+
+    if (!newUpdate) {
+        console.log("Todo non trovato");
+        return;
+    }
+    Object.assign(newUpdate, changes);
+
+    return newUpdate;
+}
