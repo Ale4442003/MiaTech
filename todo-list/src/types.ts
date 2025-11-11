@@ -19,51 +19,56 @@ export interface TodoWithMetadata extends Todo{
     metadata?: string | object,
 }
 
-/* Utiliti */
+export interface Project {
+    users: [],
+    todos: [],
+}
 
-  interface UserInfo {
-      id: string,
-      name: string,
-      age: number,
-  }
+// /* Utiliti */
 
-  interface UserAuth extends UserInfo {
-      isAuth: boolean,
-  }
+//   interface UserInfo {
+//       id: string,
+//       name: string,
+//       age: number,
+//   }
 
-  type User =UserInfo & UserAuth
+//   interface UserAuth extends UserInfo {
+//       isAuth: boolean,
+//   }
 
-//Prendi dal tipo di dato User soltanto gli id
-//Pick → seleziona qualcosa dal tipo di dato che ho specificato tra le <...>
-  const user: Pick<User, "id" | "name">= {
-     id:"",
-     name: "",
- }
+//   type User =UserInfo & UserAuth
 
-// è il contrario di Pick → prendi tutto tranne name e isAuth
- const user1: Omit<User, "name" | "isAuth"> = {
-     id: "",
-     age: 0
- }
+// //Prendi dal tipo di dato User soltanto gli id
+// //Pick → seleziona qualcosa dal tipo di dato che ho specificato tra le <...>
+//   const user: Pick<User, "id" | "name">= {
+//      id:"",
+//      name: "",
+//  }
 
-//readonlyUser → di sola lettura, non permette di modificare un elemento
- const readonlyUser: Readonly<User> = {
-     id:"",
-     name: "",
-     age: 0,
-     isAuth: true
- }
+// // è il contrario di Pick → prendi tutto tranne name e isAuth
+//  const user1: Omit<User, "name" | "isAuth"> = {
+//      id: "",
+//      age: 0
+//  }
 
-// Partial → rende tutte le proprietà di tipo opzionale
-const user2: Partial<User> = {
-     id: "",
- } // → per creare un oggetto 
+// //readonlyUser → di sola lettura, non permette di modificare un elemento
+//  const readonlyUser: Readonly<User> = {
+//      id:"",
+//      name: "",
+//      age: 0,
+//      isAuth: true
+//  }
 
- //Required → rende tutti gli elementi obbligatori (opposto di partial)
- // anche se ipotizzando ho alcuni? , verrano cmq gestiti come obbligatori
- const user3: Required<User> = {
-     id: "",
-     name: "",
-     age:0,
-     isAuth: false
- }
+// // Partial → rende tutte le proprietà di tipo opzionale
+// const user2: Partial<User> = {
+//      id: "",
+//  } // → per creare un oggetto 
+
+//  //Required → rende tutti gli elementi obbligatori (opposto di partial)
+//  // anche se ipotizzando ho alcuni? , verrano cmq gestiti come obbligatori
+//  const user3: Required<User> = {
+//      id: "",
+//      name: "",
+//      age:0,
+//      isAuth: false
+//  }

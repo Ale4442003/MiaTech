@@ -1,6 +1,6 @@
 // const myName: string = 'Ale'; 
 // console.log(myName);
-import { Todo, TodoWithMetadata } from "./types";
+import { Todo, TodoWithMetadata, User } from "./types";
 
 const myTodo: Todo = {
     id: 1,
@@ -80,3 +80,7 @@ const updateTodo = (id: number, changes: Partial<Todo>): Todo | undefined => {
 const getTodoSummary = (todo: Todo): [string, boolean] => {
     return [todo.title, todo.completed];
 }
+
+const createProject = (users: User[], todos: Todo[]) => {
+    return { users, todos };
+};
