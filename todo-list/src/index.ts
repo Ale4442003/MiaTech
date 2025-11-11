@@ -2,6 +2,7 @@
 // console.log(myName);
 import { Todo, TodoStatus, TodoWithMetadata } from "./types";
 import { User } from "./User";
+import { filterTodos } from "./utils";
 
 const myTodo: Todo = {
     id: 1,
@@ -103,3 +104,6 @@ const user2 = new User("2", "Marco", "marco@example.com");
 
 user1.addTodo(myTodo);
 console.log(user1.todos);
+
+const todosToComplete = filterTodos(todos, (todo) => todo.status === TodoStatus.Pending);
+console.log(todosToComplete);
