@@ -76,3 +76,7 @@ const updateTodo = (id: number, changes: Partial<Todo>): Todo | undefined => {
 
     return newUpdate;
 }
+
+const getTodoSummary = (todo: Todo): [string, boolean] => {
+    return [todo.title, todo.completed];
+}
