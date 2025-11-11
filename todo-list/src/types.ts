@@ -25,7 +25,7 @@ export interface Project {
     todos: [],
 }
 
-enum TodoStatus {
+export enum TodoStatus {
     Pending,
     InProgress,
     Completed,

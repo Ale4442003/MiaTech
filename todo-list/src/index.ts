@@ -1,6 +1,6 @@
 // const myName: string = 'Ale'; 
 // console.log(myName);
-import { Todo, TodoWithMetadata, User } from "./types";
+import { Todo, TodoStatus, TodoWithMetadata, User } from "./types";
 
 const myTodo: Todo = {
     id: 1,
@@ -19,8 +19,9 @@ const addTodo = (title: string, metadata?: string | object): TodoWithMetadata =>
         id: todos.length + 1, //id sempre diverso
         title: title,
         completed: false,
+        status: TodoStatus.Pending,
         //se metadata esiste (non è undefined), allora aggiungilo all'oggetto.
-        ...(metadata !== undefined && { metadata })
+        ...(metadata !== undefined && { metadata }),
     };
     todos.push(newTodo);
     return (newTodo);
