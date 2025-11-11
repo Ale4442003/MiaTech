@@ -6,6 +6,7 @@ export interface Todo {
     title: string,
     completed: boolean,
     userId?: number,
+    status: TodoStatus,
 }
 
 export interface User {
@@ -22,6 +23,12 @@ export interface TodoWithMetadata extends Todo{
 export interface Project {
     users: [],
     todos: [],
+}
+
+enum TodoStatus {
+    Pending,
+    InProgress,
+    Completed,
 }
 
 // /* Utiliti */
@@ -72,3 +79,34 @@ export interface Project {
 //      age:0,
 //      isAuth: false
 //  }
+
+//enum → enumeratio → strutture che permetto di definire dei dati rigidi
+//  all'interno di valore
+//→ numeric
+// enum Status{
+//     Pending, //0
+//     Aborted, // 1
+//     Completed, //2
+// }
+// //→ string
+// enum Role {
+//     Guest= "GUEST",
+//     User = "USER",
+//     Admin = "ADMIN",
+// }
+// //→ mixed
+// enum MixedResponse {
+//     yes = 1,
+//     no = "NO",
+// }
+
+// const callStatus: Status = Status.Aborted;
+// const callStatus: Status = Status.Pending;
+// const callStatus: Status = Status.Completed;
+
+// const role: Role.Admin;
+// const res: MixedResponse = MixedResponse.yes;
+// const res: MixedResponse = MixedResponse.no;
+
+
+
